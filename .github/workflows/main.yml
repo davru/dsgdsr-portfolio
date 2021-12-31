@@ -23,10 +23,10 @@ jobs:
       run: npm install
 
     - name: Run Angular tests
-      run: npm run test
+      run: npm run test:prod
 
     - name: Build Project
-      run: npm run build
+      run: npm run build:prod
     
     - name: Sync Files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
