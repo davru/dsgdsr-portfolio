@@ -1,5 +1,7 @@
 name: Deploy prod site
       
+on: workflow_dispatch
+
 jobs:
   web-deploy:
     name: Deploy Angular portfolio
