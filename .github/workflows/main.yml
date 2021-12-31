@@ -6,6 +6,7 @@ jobs:
   web-deploy:
     name: Deploy Angular portfolio
     runs-on: ubuntu-latest
+    environment: prod
 
     steps:
     - name: Get latest code
@@ -22,5 +23,5 @@ jobs:
     - name: Build Project
       run: npm run build:prod
 
-    - name: Build Project
+    - name: Deploy Project
       run: npm run deploy
