@@ -32,5 +32,5 @@ jobs:
         username: ${{ secrets.DEPLOY_USER }}
         password: ${{ secrets.DEPLOY_PASS }}
         local-dir: ./dist/
-        server-dir: ./www
+        server-dir: ./
         dangerous-clean-slate: true
