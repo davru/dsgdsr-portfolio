@@ -24,4 +24,4 @@ jobs:
       run: npm run build:prod
 
     - name: Deploy Project
-      run: npm run deploy
+      run: npm run deploy:prod

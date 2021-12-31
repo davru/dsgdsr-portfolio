@@ -9,6 +9,7 @@
     "build:prod": "ng build --prod",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "deploy": "env-cmd node deploy.js",
+    "deploy:prod": "node deploy.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

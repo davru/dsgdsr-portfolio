@@ -1,5 +1,4 @@
-const SftpUpload = require("sftp-upload"),
-  fs = require("fs");
+const SftpUpload = require("sftp-upload");
 
 const options = {
     host: process.env.DEPLOY_HOST,
