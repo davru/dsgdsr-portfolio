@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "deploy": "npx env-cmd node deploy.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
