@@ -1,8 +1,13 @@
-name: Deploy prod site
+name: Run tests on main branch push
+
+on: 
+  push:
+    branches: 
+      - main
       
 jobs:
   web-deploy:
-    name: Deploy Angular portfolio
+    name: Run Angular tests
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +22,5 @@ jobs:
     - name: Install NPM Modules
       run: npm install
 
-    - name: Build Project
-      run: npm run build:prod
-
-    - name: Build Project
-      run: npm run deploy
+    - name: Run Angular tests
+      run: npm run test:prod

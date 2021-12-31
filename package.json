@@ -8,6 +8,7 @@
     "test": "ng test",
     "build:prod": "ng build --prod",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
+    "deploy": "env-cmd node deploy.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -23,7 +24,9 @@
     "@angular/router": "~11.2.13",
     "@angular/service-worker": "^12.2.4",
     "@duckdoc/termynal": "^1.0.0",
+    "env-cmd": "^10.1.0",
     "rxjs": "~6.6.0",
+    "sftp-upload": "^1.0.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
