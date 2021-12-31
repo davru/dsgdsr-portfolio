@@ -1,8 +1,5 @@
 const SftpUpload = require("sftp-upload");
-console.log(process.env.DEPLOY_HOST);
 
-console.log(process.env.DEPLOY_USER);
-console.log(process.env.DEPLOY_PASS);
 const options = {
     host: process.env.DEPLOY_HOST,
     username: process.env.DEPLOY_USER,
