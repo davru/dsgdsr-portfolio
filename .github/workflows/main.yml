@@ -25,3 +25,7 @@ jobs:
 
     - name: Deploy Project
       run: npm run deploy:prod
+      env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PASS: ${{ secrets.DEPLOY_PASS }}
