@@ -31,6 +31,7 @@ jobs:
         server: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.DEPLOY_USER }}
         password: ${{ secrets.DEPLOY_PASS }}
+        port: 22
         local-dir: ./dist/
         server-dir: ./
         dangerous-clean-slate: true
