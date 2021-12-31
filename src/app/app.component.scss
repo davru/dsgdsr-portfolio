@@ -1,0 +1,18 @@
+:host {
+    #app-container {
+        &.theme {
+            &-light {
+                background: white;
+            }
+
+            &-dark {
+                background: #23252c;
+            }
+        }
+    }
+
+        [data-termynal] {
+
+            box-shadow: 0px 10px 20px #00000030 !important;
+        }
+}
