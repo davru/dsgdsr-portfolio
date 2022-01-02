@@ -1,0 +1,17 @@
+:host {
+  .bttop-container {
+    position: fixed;
+    bottom: 0; right: 0;
+    margin: 2em 2.2em;
+    display: flex;
+    align-items: center;
+    font-size: .8em;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-color);
+
+    span {
+      margin-right: .6em;
+    }
+  }
+}

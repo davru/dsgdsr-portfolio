@@ -10,17 +10,21 @@ import { environment } from '../environments/environment';
 import { NavComponent } from './components/navbar';
 import { TerminalComponent } from './components/terminal';
 import { ThemeSwitcherComponent } from './components/theme-switcher';
+import { BackToTopComponent } from './components/back-to-top';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     TerminalComponent,
-    ThemeSwitcherComponent
+    ThemeSwitcherComponent,
+    BackToTopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

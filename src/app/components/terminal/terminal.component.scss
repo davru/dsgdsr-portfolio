@@ -1,8 +1,6 @@
 :host {
   .terminal-container {
-    --color-bg: #272b36;
     --color-text: #ffffff;
-    --color-text-subtle: #ff69c1;
 
     padding: 0;
     margin: 0;
@@ -12,23 +10,13 @@
     align-items: center;
     justify-content: center;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    &.theme-dark {
-      
-      [data-termynal] {
-  
-        box-shadow: 0px 10px 20px #00000030 !important;
-      }
-    }
-
+    -moz-osx-font-smoothing: grayscale
   }
 
   [data-termynal] {
     width: 800px;
     max-width: 100%;
     min-height: 500px;
-    background: var(--color-bg);
     color: var(--color-text);
     border-radius: 4px;
     font-size: .95em;
@@ -37,8 +25,9 @@
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    box-shadow: 0px 10px 40px #52525290;
     margin: 30px;
+    box-shadow: var(--terminal-shadow);
+    background: var(--terminal-bg);
     
     @media (max-width: 800px) {
       font-size: .9em;
@@ -69,7 +58,7 @@
     line-height: 1.8;
 
     .text-input {
-      color: var(--color-text-subtle);
+      color: var(--color-text-main);
     }
 
     a {
@@ -87,7 +76,7 @@
   [data-ty="input"]:before,
   [data-ty-prompt]:before {
     margin-right: 0.75em;
-    color: var(--color-text-subtle);
+    color: var(--color-text-main);
   }
 
   [data-ty="input"]:before {

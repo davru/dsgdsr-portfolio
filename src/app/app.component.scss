@@ -3,16 +3,19 @@
         &.theme {
             &-light {
                 background: white;
+                --text-color: #161618;
+                --color-text-main: #fb24a2;
+                --terminal-bg: #272b36;
+                --terminal-shadow: 0px 10px 40px #52525290;
             }
 
             &-dark {
                 background: #23252c;
+                --text-color: white;
+                --color-text-main: #ff69c1;
+                --terminal-bg: #323744;
+                --terminal-shadow: 0px 10px 20px #00000030;
             }
         }
     }
-
-        [data-termynal] {
-
-            box-shadow: 0px 10px 20px #00000030 !important;
-        }
 }
