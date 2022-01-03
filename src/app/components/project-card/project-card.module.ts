@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from './project-card.component';
 
@@ -11,8 +11,6 @@ import { ProjectCardComponent } from './project-card.component';
     ],
     exports: [
         ProjectCardComponent
-    ],
-    providers: [],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    ]
 })
 export class ProjectCardModule {}

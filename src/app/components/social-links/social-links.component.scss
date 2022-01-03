@@ -1,0 +1,59 @@
+:host {
+  .social-links {
+    width: 30px;
+    position: fixed;
+    bottom: 0; left: 0;
+    margin: 0 2em;
+    color: var(--text-color);
+
+    @media (max-width: 1080px) {
+      margin: 0 1.2em;
+    }
+
+    .social-icons-list {
+      display: flex;
+      flex-direction: column;
+      -webkit-box-align: center;
+      align-items: center;
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 80px;
+        margin: 0px auto;
+        background-color: var(--text-color);
+      }
+
+      .social-icon:last-child {
+        margin-bottom: 1em;
+      }
+
+      .social-icon-link {
+        display: inline-block;
+        padding: .6em 0;
+        
+        .icon {
+          max-width: 1.4em;
+          transition: all .2s ease;
+
+          &[name="linkedin"] {
+            stroke: transparent;
+            fill: var(--text-color);
+          }
+
+          &:hover {
+            color: var(--color-text-main);
+
+            &[name="linkedin"] {
+              fill: var(--color-text-main);
+            }
+          }
+        }
+      }
+    }
+  }
+}

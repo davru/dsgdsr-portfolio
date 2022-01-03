@@ -5,13 +5,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-
-// COMPONENTS
-import { NavModule } from './components/navbar/navbar.module';
-import { TerminalModule } from './components/terminal/terminal.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BackToTopModule } from './components/back-to-top/back-to-top.module';
-import { ProjectCardModule } from './components/project-card/project-card.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -29,10 +24,7 @@ import { ProjectCardModule } from './components/project-card/project-card.module
     }),
 
     // Components,
-    NavModule,
-    TerminalModule,
-    BackToTopModule,
-    ProjectCardModule
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

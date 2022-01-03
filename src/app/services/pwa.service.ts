@@ -30,7 +30,7 @@ export class PwaService {
   }
 
   updateApp(): void {
-    document.location.reload(true);
+    document.location.reload();
     console.log('The app is updating right now');
   }
 }

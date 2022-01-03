@@ -28,6 +28,10 @@
     margin: 30px;
     box-shadow: var(--terminal-shadow);
     background: var(--terminal-bg);
+
+    a {
+      text-decoration: underline;
+    }
     
     @media (max-width: 800px) {
       font-size: .9em;

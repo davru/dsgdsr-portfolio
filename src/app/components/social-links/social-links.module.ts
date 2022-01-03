@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackToTopComponent } from './back-to-top.component';
+import { SocialLinksComponent } from './social-links.component';
 import { IconsModule } from '../icons/icons.module';
 
 @NgModule({
     declarations: [
-        BackToTopComponent
+        SocialLinksComponent
     ],
     imports: [
         CommonModule,
         IconsModule
     ],
     exports: [
-        BackToTopComponent
+        SocialLinksComponent
     ]
 })
-export class BackToTopModule {}
+export class SocialLinksModule {}
