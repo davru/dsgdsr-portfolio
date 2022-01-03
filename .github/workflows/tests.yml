@@ -24,17 +24,3 @@ jobs:
 
     - name: Run Angular tests
       run: yarn test:prod
-
-    - name: Build Project
-      run: npm run build:prod
-    
-    - name: Sync Files
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      with:
-        FTP_SERVER: ${{ secrets.DEPLOY_HOST }}
-        FTP_USERNAME: ${{ secrets.DEPLOY_USER }}
-        FTP_PASSWORD: ${{ secrets.DEPLOY_PASS }}
-        LOCAL_DIR: dist
-        METHOD: sftp
-        PORT: 22
-        ARGS: --delete
