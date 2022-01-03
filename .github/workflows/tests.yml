@@ -14,11 +14,27 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v2.3.2
 
-    - name: Use yarn
-      uses: borales/actions-yarn@v2.3.0
+    - name: Use Node.js 16 LTS
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
       
     - name: Install NPM Modules
       run: yarn install
 
     - name: Run Angular tests
       run: yarn test:prod
+
+    - name: Build Project
+      run: npm run build:prod
+    
+    - name: Sync Files
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      with:
+        FTP_SERVER: ${{ secrets.DEPLOY_HOST }}
+        FTP_USERNAME: ${{ secrets.DEPLOY_USER }}
+        FTP_PASSWORD: ${{ secrets.DEPLOY_PASS }}
+        LOCAL_DIR: dist
+        METHOD: sftp
+        PORT: 22
+        ARGS: --delete
