@@ -1,12 +1,23 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentsModule } from './components/components.module';
+
+export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
+  return (): Promise<void> =>
+    new Promise((resolve) => {
+      swUpdate.checkForUpdate();
+      swUpdate.available.subscribe(() => {
+          window.location.reload();
+      });
+
+      resolve();
+    });
+};
 
 @NgModule({
   declarations: [
@@ -18,15 +29,17 @@ import { ComponentsModule } from './components/components.module';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-
-    // Components,
-    ComponentsModule
+      registrationStrategy: 'registerImmediately'
+    })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: checkForUpdates,
+      multi: true,
+      deps: [SwUpdate]
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
