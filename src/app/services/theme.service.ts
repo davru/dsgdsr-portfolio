@@ -9,7 +9,7 @@ export enum ThemeModes {
   providedIn: 'root',
 })
 export class ThemeService {
-  public theme: ThemeModes = ThemeModes.Light;
+  public theme: ThemeModes = ThemeModes.Dark;
 
   constructor() {}
 

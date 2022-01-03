@@ -6,6 +6,12 @@
         "description": "",
         "tags": [
             "Electron", "Genius API", "React (Web)"
+        ],
+        "links": [
+            {
+                "icon": "external-link",
+                "url": "https://spotifyrics.dsgdsr.me"
+            }
         ]
     }
 ]

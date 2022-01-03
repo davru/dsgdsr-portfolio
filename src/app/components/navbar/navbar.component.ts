@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
             <span>_<h1>dsgdsr</h1></span>
         </div>
         <div class="nav-links">
-            <a href="#projects" class="nav-link">
+            <a href="#work" class="nav-link">
                 <span class="nav-link-number">01</span>
-                <span>projects</span>
+                <span>work</span>
+            </a>
+            <a href="#jobs" class="nav-link">
+                <span class="nav-link-number">02</span>
+                <span>experience</span>
             </a>
             <span class="nav-link"><app-theme-switcher></app-theme-switcher></span>
         </div>
