@@ -125,9 +125,6 @@
               "devServerTarget": "portfolio:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "ngx-deploy-ftp:deploy"
         }
       }
     }
