@@ -7,19 +7,15 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 // COMPONENTS
-import { NavComponent } from './components/navbar';
-import { TerminalComponent } from './components/terminal';
-import { ThemeSwitcherComponent } from './components/theme-switcher';
-import { BackToTopComponent } from './components/back-to-top';
+import { NavModule } from './components/navbar/navbar.module';
+import { TerminalModule } from './components/terminal/terminal.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BackToTopModule } from './components/back-to-top/back-to-top.module';
+import { ProjectCardModule } from './components/project-card/project-card.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
-    TerminalComponent,
-    ThemeSwitcherComponent,
-    BackToTopComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +26,13 @@ import { HttpClientModule } from '@angular/common/http';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+
+    // Components,
+    NavModule,
+    TerminalModule,
+    BackToTopModule,
+    ProjectCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
