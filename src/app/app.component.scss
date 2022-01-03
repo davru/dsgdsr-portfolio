@@ -3,6 +3,7 @@
         &.theme {
             &-light {
                 background: white;
+                --bg-color: white;
                 --text-color: #161618;
                 --color-text-main: #fb24a2;
                 --terminal-bg: #272b36;
@@ -11,6 +12,7 @@
 
             &-dark {
                 background: #23252c;
+                --bg-color: #23252c;
                 --text-color: white;
                 --color-text-main: #ff69c1;
                 --terminal-bg: #323744;

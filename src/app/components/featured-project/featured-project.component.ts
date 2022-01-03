@@ -3,11 +3,11 @@ import { Project } from '../../interfaces/project';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
-    selector: 'app-project-card',
-    templateUrl: './project-card.component.html',
-    styleUrls: ['./project-card.component.scss']
+    selector: 'app-featured-project',
+    templateUrl: './featured-project.component.html',
+    styleUrls: ['./featured-project.component.scss']
 })
-export class ProjectCardComponent implements OnInit {
+export class FeaturedProjectComponent implements OnInit {
     @Input() project: Project;
 
     constructor(public themeService: ThemeService) {}
