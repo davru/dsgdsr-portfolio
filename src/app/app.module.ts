@@ -2,10 +2,12 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { BackToTopModule } from './components/back-to-top/back-to-top.module';
+import { SocialLinksModule } from './components/social-links/social-links.module';
+import { HomepageModule } from './pages/homepage/homepage.module';
 
 export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   return (): Promise<void> =>
@@ -25,12 +27,18 @@ export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerImmediately'
-    })
+    }),
+
+    // Components
+    BackToTopModule,
+    SocialLinksModule,
+
+    // Homepage
+    HomepageModule
   ],
   providers: [
     {

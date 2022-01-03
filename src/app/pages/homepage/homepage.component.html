@@ -2,5 +2,6 @@
   
 <app-terminal></app-terminal>
 
-<app-social-links></app-social-links>
-<app-back-to-top></app-back-to-top>
+<div class="featured-project__list">
+    <app-featured-project *ngFor="let project of projects" [project]="project"></app-featured-project>
+</div>

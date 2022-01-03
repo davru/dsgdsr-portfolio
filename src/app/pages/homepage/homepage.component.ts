@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
     selector: 'app-homepage',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-    constructor() { }
+    public projects: [] = [];
 
-    ngOnInit(): void { }
+    constructor(private projectService: ProjectService) { }
+
+    ngOnInit(): void {
+        this.projectService.getProjects().subscribe(data => this.projects = data);
+    }
 }
