@@ -16,6 +16,16 @@
       }
     },
     {
+      "name": "fathom",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "resources": {
+        "urls": [
+          "https://cdn.usefathom.com/script.js"
+        ]
+      }
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
