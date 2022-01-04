@@ -2,7 +2,7 @@
     {
         "slug": "spotifyrics",
         "name": "Spotifyrics",
-        "featured_image": null,
+        "featured_image": "spotifyrics-k32.png",
         "description": "",
         "tags": [
             "Electron", "Genius API", "React (Web)"

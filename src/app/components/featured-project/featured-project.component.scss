@@ -1,3 +1,29 @@
 :host {
-  
+    .featured-project {
+        position: relative;
+
+        &--rtl {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .featured-image__container {
+        width: 62%;
+
+        .project__image {
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .project__container {
+        width: 52%;
+        height: 100%;
+        position: absolute;
+        right: 0; top: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

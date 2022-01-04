@@ -1,6 +1,6 @@
-<div class="featured-project">
+<div class="featured-project {{ rtl ? 'featured-project--rtl' : null }}">
     <div class="featured-image__container">
-        
+        <img class="project__image" [src]="'./assets/data/images/' + project.featured_image"/>
     </div>
     <div class="project__container">
         <h3 class="project__title">{{ project.name }}</h3>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="project__links">
-            <a *ngFor="let link of project.links" target="_blank" [href]="link.url">
+            <a *ngFor="let link of project.links" [alt]="link.icon" target="_blank" [href]="link.url">
                 <i-feather class="project__link" [name]="link.icon"></i-feather>
             </a>
         </div>

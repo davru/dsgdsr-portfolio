@@ -9,6 +9,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class FeaturedProjectComponent implements OnInit {
     @Input() project: Project;
+    @Input() rtl = false;
 
     constructor(public themeService: ThemeService) {}
 
