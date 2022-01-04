@@ -1,7 +1,7 @@
-<div class="bttop-container">
-    <span>scroll</span>
+<div class="bttop-container" (click)="scroll()">
+    <span class="{{ isAtTop ? null : 'hidden' }}">scroll</span>
     <ng-container *ngIf="true; else elseTemplate">
-        <i-feather name="arrow-down" class="arrow-icon"></i-feather>
+        <i-feather name="arrow-down" class="arrow-icon {{ isAtTop ? null : 'scrolling' }}"></i-feather>
     </ng-container>
     <ng-template #elseTemplate>
         

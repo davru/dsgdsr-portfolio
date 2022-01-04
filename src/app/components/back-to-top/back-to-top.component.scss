@@ -9,15 +9,25 @@
     font-weight: 500;
     cursor: pointer;
     color: var(--text-color);
-
+    
     span {
       margin-right: .6em;
-    }
+      transition: opacity .2s ease;
 
+      &.hidden {
+        opacity: 0;
+      }
+    }
+    
     .arrow-icon {
       width: 16px;
       display: flex;
       align-items: center;
+      transition: transform .75s ease;
+
+      &.scrolling {
+        transform: rotate(180deg);
+      }
     }
   }
 }
