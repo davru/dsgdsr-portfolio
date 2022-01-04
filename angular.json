@@ -69,8 +69,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portfolio:build",
-            "sourceMap": true
+            "browserTarget": "portfolio:build"
           },
           "configurations": {
             "production": {

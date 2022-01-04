@@ -4,7 +4,7 @@ const options = {
     host: process.env.DEPLOY_HOST,
     username: process.env.DEPLOY_USER,
     password: process.env.DEPLOY_PASS,
-    path: "./dist/portfolio-gzip",
+    path: "./dist/portfolio",
     remoteDir: "./",
     dryRun: false,
   },

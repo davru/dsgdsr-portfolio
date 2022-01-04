@@ -23,9 +23,6 @@ jobs:
     - name: Build Project
       run: yarn build:prod
 
-    - name: Gzip dist folder
-      run: yarn gzip
-
     - name: Deploy Project
       run: yarn deploy:prod
       env:
