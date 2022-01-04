@@ -46,7 +46,7 @@ export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
       useFactory: checkForUpdates,
       multi: true,
       deps: [SwUpdate]
-    },
+    }
   ],
   bootstrap: [AppComponent]
 })
