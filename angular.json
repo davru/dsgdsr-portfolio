@@ -40,8 +40,7 @@
               "node_modules/prismjs/components/prism-javascript.min.js",
               "node_modules/prismjs/components/prism-cshtml.min.js"
             ],
-            "serviceWorker": false,
-            "ngswConfigPath": "ngsw-config.json"
+            "serviceWorker": false
           },
           "configurations": {
             "production": {
