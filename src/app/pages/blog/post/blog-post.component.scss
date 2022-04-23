@@ -1,0 +1,32 @@
+:host {
+    .blog-post__wrapper {
+        margin: 0 auto;
+        padding: 9em 0 5em 0;
+        max-width: 92%;
+        width: 600px;
+        color: var(--text-color);
+
+        .blog-post__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5em;
+        }
+
+        markdown ::ng-deep {
+            font-size: .85em;
+
+            img {
+                max-width: 100%;
+            }
+
+            a {
+                color: var(--color-text-main);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

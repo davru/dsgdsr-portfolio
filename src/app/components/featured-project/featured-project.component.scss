@@ -1,9 +1,16 @@
 :host {
+    --project--b-redius: .4em;
+
     .featured-project {
         position: relative;
+        display: flex;
 
         &--rtl {
-            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+
+            .project__wrapper {
+                left: 0;
+            }
         }
     }
 
@@ -11,19 +18,52 @@
         width: 62%;
 
         .project__image {
+            border-radius: var(--project--b-redius);
             display: block;
             max-width: 100%;
             object-fit: contain;
+            box-shadow: 0px 10px 20px #00000030;
         }
     }
 
-    .project__container {
-        width: 52%;
+    .project__wrapper {
+        width: 54%;
         height: 100%;
         position: absolute;
         right: 0; top: 0;
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        .project__container {
+            border-radius: var(--project--b-redius);
+            background: var(--bg-secondary-color);
+            padding: 1.35em 1.75em 1.7em 1.75em;
+            color: white;
+            box-shadow: var(--terminal-shadow);
+
+            .project__title {
+                position: relative;
+
+                .project__url {
+                    position: absolute;
+                    right: 0;
+                    color: #ff69c1;
+                    width: .9em;
+                    display: flex;
+                    top: 0;
+                }
+            }
+
+            .project__description {
+                margin-top: 1.25em;
+                font-size: .75em;
+            }
+
+            .project__tags {
+                margin-top: 2.5em;
+                float: right;
+            }
+        }
     }
 }

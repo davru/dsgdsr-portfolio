@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TerminalComponent } from './terminal.component';
 
@@ -11,6 +11,7 @@ import { TerminalComponent } from './terminal.component';
     ],
     exports: [
         TerminalComponent
-    ]
+    ],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class TerminalModule {}

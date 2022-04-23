@@ -1,8 +1,18 @@
 :host {
     .featured-project__list {
-        margin: 3em auto;
+        margin: .5em auto 5em auto;
         max-width: 92%;
         width: 980px;
-    }
 
+        &-title {
+            color: var(--text-color);
+            text-align: center;
+            text-decoration: overline;
+            margin: 0;
+        }
+
+        .featured-project__separator{
+            height: 5em;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../../services/project.service';
+import { Project } from '../../interfaces/project';
+import { SupabaseService } from '../../services/supabase.service';
 
 @Component({
     selector: 'app-homepage',
@@ -7,11 +8,20 @@ import { ProjectService } from '../../services/project.service';
     styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-    public projects: [] = [];
+    public projects: Project[] = [];
 
-    constructor(private projectService: ProjectService) { }
+    constructor(private supabaseService: SupabaseService) {}
 
     ngOnInit(): void {
-        this.projectService.getProjects().subscribe(data => this.projects = data);
+        this.supabaseService.getProjects().then(data => {
+            this.projects = data.data;
+
+            this.projects.forEach((project, index) => {
+                this.supabaseService.downloadImage('project-images', project.image_url).then(image => {
+                    project.featured_image = this.supabaseService.sanitizeUrl(image.data);
+                    project.index = index;
+                });
+            });
+        });
     }
 }

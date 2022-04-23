@@ -1,15 +1,14 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { BackToTopModule } from './components/back-to-top/back-to-top.module';
 import { SocialLinksModule } from './components/social-links/social-links.module';
-import { HomepageModule } from './pages/homepage/homepage.module';
+import { AppRoutingModule } from './app.routing';
+import { NavModule } from './components/navbar/navbar.module';
 
-export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
+/*export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   return (): Promise<void> =>
     new Promise((resolve) => {
       swUpdate.checkForUpdate();
@@ -19,7 +18,7 @@ export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
 
       resolve();
     });
-};
+};*/
 
 @NgModule({
   declarations: [
@@ -28,26 +27,27 @@ export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   imports: [
     BrowserModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    AppRoutingModule,
+
+    // Service worker
+    /*ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerImmediately'
-    }),
+    }),*/
 
     // Components
     BackToTopModule,
     SocialLinksModule,
-
-    // Homepage
-    HomepageModule
+    NavModule
   ],
-  providers: [
+  /*providers: [
     {
       provide: APP_INITIALIZER,
       useFactory: checkForUpdates,
       multi: true,
       deps: [SwUpdate]
     }
-  ],
+  ],*/
   bootstrap: [AppComponent]
 })
 export class AppModule { }

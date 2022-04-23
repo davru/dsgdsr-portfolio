@@ -1,7 +1,12 @@
-<app-nav></app-nav>
-  
 <app-terminal></app-terminal>
 
 <div class="featured-project__list">
-    <app-featured-project *ngFor="let project of projects" [project]="project"></app-featured-project>
+    <h2 class="featured-project__list-title">Featured work</h2>
+    <ng-container *ngFor="let project of projects">
+        <div class="featured-project__separator"></div>
+        <app-featured-project
+            [project]="project"
+            [rtl]="project.index / 2 !== 0"
+        ></app-featured-project>
+    </ng-container>
 </div>

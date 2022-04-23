@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-back-to-top',
@@ -9,7 +10,7 @@ export class BackToTopComponent implements OnInit {
     public isAtTop = true;
     private topOffset = 30;
 
-    constructor() {}
+    constructor(public readonly router: Router) {}
 
     ngOnInit(): void {}
 
@@ -19,11 +20,11 @@ export class BackToTopComponent implements OnInit {
     }
 
     public scroll(): void {
-        this.isAtTop ? this.scrollTo(this.vhToPixels(100)) : this.scrollTo(0);
+        this.isAtTop ? this.scrollTo(this.vhToPixels(95)) : this.scrollTo(0);
     }
 
     private scrollTo(px: number): void {
-        window.scrollTo(document.body.scrollWidth, px);
+        window.scrollTo({ left: document.body.scrollWidth, top: px, behavior: 'smooth' });
     }
 
     private vhToPixels(vh: number): number {

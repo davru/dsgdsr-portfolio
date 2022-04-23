@@ -9,14 +9,17 @@
     font-weight: 500;
     cursor: pointer;
     color: var(--text-color);
+
+    .hidden {
+      opacity: 0;
+    }
     
     span {
       margin-right: .6em;
-      transition: opacity .2s ease;
+    }
 
-      &.hidden {
-        opacity: 0;
-      }
+    span, i-feather {
+      transition: opacity .2s ease;
     }
     
     .arrow-icon {

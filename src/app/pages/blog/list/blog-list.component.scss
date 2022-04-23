@@ -1,0 +1,45 @@
+:host {
+    .blog-list__wrapper {
+        margin: 0 auto;
+        padding: 9em 0 5em 0;
+        max-width: 92%;
+        width: 600px;
+        color: var(--text-color);
+
+        .blog-list__post {
+            &_title {
+                display: inline-block;
+                margin-bottom: 1em;
+
+                h3 {
+                    width: -moz-fit-content;
+                    width: fit-content;
+
+                    // workaround for IE11
+                    display: table;
+                }
+                
+                &:hover {
+                    text-decoration: overline;
+                }
+            }
+            
+            &_summary {
+                font-size: .85em;
+                margin-bottom: 1.75em;
+            }
+            
+            &_footer {
+                display: flex;
+                justify-content: space-between;
+                
+                &__more {
+                    font-size: .8em;
+                    color: var(--color-text-main);
+                    font-weight: bold;
+                    float: right;
+                }
+            }
+        }
+    }
+}

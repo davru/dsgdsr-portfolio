@@ -1,19 +1,26 @@
 <div class="featured-project {{ rtl ? 'featured-project--rtl' : null }}">
     <div class="featured-image__container">
-        <img class="project__image" [src]="'./assets/data/images/' + project.featured_image"/>
+        <img loading="lazy" class="project__image" [src]="project.featured_image"/>
     </div>
-    <div class="project__container">
-        <h3 class="project__title">{{ project.name }}</h3>
-        <div class="project__body">
-            <p class="project__description">{{ project.description }}</p>
-            <div class="project__tags">
-                <span *ngFor="let tag of project.tags" ngclass="project__tag">{{ tag }}</span>
+    <div class="project__wrapper">
+        <div class="project__container">
+            <h3 class="project__title">
+                {{ project.name }}
+                <a class="project__url" [href]="project.url" target="_blank">
+                    <i-feather name="external-link" class="project__url-icon"></i-feather>
+                </a>
+            </h3>
+            <div class="project__body">
+                <p class="project__description">{{ project.description }}</p>
+                <div class="project__tags">
+                    <app-tag-list [tags]="project.tags"></app-tag-list>
+                </div>
             </div>
-        </div>
-        <div class="project__links">
-            <a *ngFor="let link of project.links" [alt]="link.icon" target="_blank" [href]="link.url">
-                <i-feather class="project__link" [name]="link.icon"></i-feather>
-            </a>
+            <!--div class="project__links">
+                <a *ngFor="let link of project.links" [alt]="link.icon" target="_blank" [href]="link.url">
+                    <i-feather class="project__link" [name]="link.icon"></i-feather>
+                </a>
+            </div-->
         </div>
     </div>
 </div>

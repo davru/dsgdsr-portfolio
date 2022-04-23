@@ -8,7 +8,8 @@ import {
   Github,
   Twitter,
   Codepen,
-  Linkedin
+  Linkedin,
+  ExternalLink
 } from 'angular-feather/icons';
 
 const icons = {
@@ -18,7 +19,8 @@ const icons = {
   Github,
   Twitter,
   Codepen,
-  Linkedin
+  Linkedin,
+  ExternalLink
 };
 
 @NgModule({

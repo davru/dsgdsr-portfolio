@@ -35,6 +35,7 @@
         .icon {
           max-width: 1.4em;
           transition: all .2s ease;
+          stroke: var(--text-color);
 
           &[name="linkedin"] {
             stroke: transparent;
@@ -43,6 +44,10 @@
 
           &:hover {
             color: var(--color-text-main);
+
+            &:not([name="linkedin"]) {
+              stroke: var(--color-text-main);
+            }
 
             &[name="linkedin"] {
               fill: var(--color-text-main);
