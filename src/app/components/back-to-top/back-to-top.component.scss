@@ -10,6 +10,10 @@
     cursor: pointer;
     color: var(--text-color);
 
+    @media (max-width: 800px) {
+      display: none;
+    }
+
     .hidden {
       opacity: 0;
     }

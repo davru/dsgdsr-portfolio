@@ -6,6 +6,10 @@
     margin: 0 2em;
     color: var(--text-color);
 
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
     .social-icons-list {
       display: flex;
       flex-direction: column;

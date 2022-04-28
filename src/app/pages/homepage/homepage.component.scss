@@ -1,8 +1,9 @@
 :host {
     .featured-project__list {
         margin: .5em auto 5em auto;
-        max-width: 92%;
+        max-width: 100%;
         width: 980px;
+        padding: 0 2.2em;
 
         &-title {
             color: var(--text-color);
