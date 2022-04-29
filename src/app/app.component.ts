@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // ENV VARIABLE
-    load('BRJUSAOF');
+    load('BRJUSAOF', {
+      spa: 'history'
+    });
   }
 }

@@ -20,8 +20,11 @@ jobs:
     - name: Install NPM Modules
       run: yarn install
 
-    - name: Build Project
+    - name: Build project
       run: yarn build:prod
+
+    - name: GZIP project
+      run: yarn gzip
 
     - name: Deploy Project
       run: yarn deploy:prod
