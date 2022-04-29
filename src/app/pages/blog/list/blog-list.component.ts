@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogPost } from '../../../interfaces/blog';
 import { SupabaseService } from '../../../services/supabase.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { SupabaseService } from '../../../services/supabase.service';
     styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
-    public posts: any[] = [];
+    public posts: BlogPost[] = [];
 
     constructor(private readonly supabaseService: SupabaseService) {}
 

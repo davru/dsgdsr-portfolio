@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BlogPost } from '../../../interfaces/blog';
 import { SupabaseService } from '../../../services/supabase.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SupabaseService } from '../../../services/supabase.service';
     styleUrls: ['./blog-post.component.scss']
 })
 export class BlogPostComponent implements OnInit {
-    public post: any;
+    public post: BlogPost;
 
     constructor(
         private readonly supabaseService: SupabaseService,

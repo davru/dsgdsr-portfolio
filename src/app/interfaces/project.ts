@@ -6,7 +6,7 @@ export interface Project {
     description?: string;
     url?: string;
     tags: string[];
-    links: ProjectLink[];
+    links?: ProjectLink[];
     image_url: string;
     featured_image?: SafeUrl;
     index?: number;
