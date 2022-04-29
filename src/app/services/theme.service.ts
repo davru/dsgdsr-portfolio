@@ -21,7 +21,7 @@ export class ThemeService {
       dark: '#ffffff'
     },
     '--bg-secondary-color': {
-      light: '#272b36',
+      light: '#30333e',
       dark: '#323744'
     },
     '--text-color': {
