@@ -23,9 +23,6 @@ jobs:
     - name: Build project
       run: yarn build:prod
 
-    - name: GZIP project
-      run: yarn gzip
-
     - name: Deploy Project
       run: yarn deploy:prod
       env:
