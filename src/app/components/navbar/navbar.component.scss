@@ -23,10 +23,6 @@
       font-weight: 500;
       font-size: .95em;
 
-      .nav-link:not(:first-child) {
-        margin-left: 2.5em;
-      }
-
       a {
         text-decoration: none;
         color: inherit;
@@ -35,6 +31,16 @@
       .nav-link {
         cursor: pointer;
         transition: all .2s ease;
+
+        &:not(:first-child) {
+          margin-left: 2.5em;
+        }
+
+        @media (max-width: 450px) {
+          &:last-child {
+            display: none;
+          }
+        }
 
         &:hover {
           color: var(--color-text-main);

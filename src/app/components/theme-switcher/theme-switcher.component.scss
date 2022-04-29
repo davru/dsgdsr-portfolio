@@ -5,7 +5,14 @@
 
   .theme-icon {
     width: 18px;
-    display: flex;
-    align-items: center;
+    position: relative;
+
+    ::ng-deep {
+      svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
 }

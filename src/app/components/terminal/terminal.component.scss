@@ -12,7 +12,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
   }
-
+  
   [data-termynal] {
     width: 800px;
     max-width: 100%;
@@ -28,6 +28,10 @@
     margin: 30px;
     box-shadow: var(--terminal-shadow);
     background: var(--bg-secondary-color);
+    
+    @media (max-width: 800px) {
+      min-height: 400px;
+    }
 
     a {
       text-decoration: underline;
