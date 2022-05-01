@@ -7,8 +7,6 @@ import { Termynal } from '../../../scripts/termynal';
     styleUrls: ['./terminal.component.scss']
 })
 export class TerminalComponent implements OnInit {
-    constructor() {}
-
     ngOnInit(): void {
         // tslint:disable-next-line:no-unused-expression
         new Termynal('#termynal', { startDelay: 600 });
