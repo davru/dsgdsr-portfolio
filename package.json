@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "build:prod": "ng build --prod --aot",
+    "env-config": "ts-node -O '{\"module\": \"commonjs\"}' ./config.index.ts",
+    "build": "ng build",
+    "build:prod": "npm run env-config && ng build --prod --aot",
     "deploy": "env-cmd node deploy.js",
     "deploy:prod": "node deploy.js",
     "lint": "ng lint",
