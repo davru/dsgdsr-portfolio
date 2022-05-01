@@ -1,10 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogListComponent } from './list/blog-list.component';
 import { RouterModule } from '@angular/router';
 import { TagListModule } from '../../components/tag-list/tag-list.module';
 import { BlogPostComponent } from './post/blog-post.component';
-import { MarkdownModule, MarkdownService } from 'ngx-markdown';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
     declarations: [

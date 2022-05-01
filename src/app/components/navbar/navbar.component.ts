@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,10 +23,8 @@ import { Router } from '@angular/router';
     `,
     styleUrls: ['./navbar.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
     constructor(private readonly router: Router) {}
-
-    ngOnInit(): void {}
 
     navigateToWork(): boolean {
         if (this.router.url !== '/') {
