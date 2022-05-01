@@ -57,3 +57,6 @@ src/assets/data
 
 # Lockfiles
 yarn.lock
+
+# ENV variables
+src/environments/supabase.environment.ts
