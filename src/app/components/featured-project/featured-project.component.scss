@@ -8,7 +8,15 @@
         align-items: center;
     }
 
+    .project__url {
+        position: absolute;
+        display: flex;
+        color: #ff69c1;
+        width: .9em;
+    }
+
     .featured-image__container {
+        position: relative;
         width: 100%;
 
         .project__image {
@@ -18,9 +26,61 @@
             object-fit: contain;
             box-shadow: 0px 10px 20px #00000030;
         }
+
+        .project__links {
+            position: absolute;
+            top: 1em; right: 1em;
+            color: white;
+
+            & > a {
+                &:not(:last-child) {
+                    margin-right: .5em;
+                }
+            }
+            
+            .project__link {
+                display: inline-flex;
+                border-radius: var(--project--b-redius);
+                background: var(--bg-secondary-color);
+                box-shadow: 0 0 8px rgb(0,0,0,.45);
+                transition: color .2s ease;
+                padding: .6em;
+
+                &:hover {
+                    color: #ff69c1;
+                }
+                
+                .project__link_icon {
+                    width: 1.2em;
+                    height: 1.2em;
+                }
+            }
+        }
+
+        .project__url {
+            right: 1em; top: 1em;
+            z-index: 100;
+
+            &:before {
+                content: '';
+                position: absolute;
+                border-radius: var(--project--b-redius);
+                background: var(--bg-secondary-color);
+                box-shadow: var(--terminal-shadow);
+                padding: .5em .6em .4em .6em;
+                width: 20px; height: 20px;
+                right: -8px;
+                z-index: -1;
+            }
+
+            @media (min-width: 1200px) {
+                visibility: hidden;
+            }
+        }
     }
 
     .project__wrapper {
+        position: relative;
         width: 95%;
         height: 100%;
         right: 0; top: 0;
@@ -40,12 +100,13 @@
                 position: relative;
 
                 .project__url {
-                    position: absolute;
+                    visibility: hidden;
                     right: 0;
-                    color: #ff69c1;
-                    width: .9em;
-                    display: flex;
                     top: 0;
+
+                    @media (min-width: 1200px) {
+                        visibility: visible;
+                    }
                 }
             }
 
@@ -88,11 +149,28 @@
         .featured-project {
             flex-direction: row;
 
+            .featured-image__container { 
+                .project__links {
+                    top: unset; right: unset;
+                    bottom: 1em; left: 1em;
+
+                    a.icon-external-link {
+                        display: none;
+                    }
+                }
+            }
+
             &--rtl {
                 flex-direction: row-reverse;
     
                 .project__wrapper {
                     left: 0;
+                }
+
+                .featured-image__container { 
+                    .project__links {
+                        left: unset; right: 1em;
+                    }
                 }
             }
         }
