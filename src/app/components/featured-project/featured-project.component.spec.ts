@@ -10,7 +10,8 @@ const ProjectMock: Project = {
   tags: [],
   image_url: 'http://image.test.dev/image.png',
   featured_image: 'blob::image.png',
-  url: 'http://url.test.dev/'
+  url: 'http://url.test.dev/',
+  links: []
 };
 
 describe('FeaturedProjectComponent', () => {

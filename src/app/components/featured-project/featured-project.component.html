@@ -5,7 +5,7 @@
         </figure>
 
         <div class="project__links">
-            <ng-container *ngFor="let link of project.links">
+            <ng-container *ngFor="let link of project?.links">
               <a [class]="'icon-' + link.icon" target="_blank" [href]="link.url">
                   <span class="project__link">
                       <i-feather class="project__link_icon" [name]="link.icon"></i-feather>
