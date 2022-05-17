@@ -13,8 +13,13 @@ export class BlogListComponent implements OnInit {
     constructor(private readonly supabaseService: SupabaseService) {}
 
     ngOnInit(): void {
-        this.supabaseService.getPosts().then(posts => {
-            this.posts = posts.data;
-        });
+        if (this.supabaseService.posts?.length) {
+            this.posts = this.supabaseService.posts;
+        } else {
+            this.supabaseService.getPosts().then(posts => {
+                this.posts = posts.data;
+                this.supabaseService.posts = this.posts;
+            });
+        }
     }
 }

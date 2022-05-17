@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+
+// Component modules
 import { BackToTopModule } from './components/back-to-top/back-to-top.module';
 import { SocialLinksModule } from './components/social-links/social-links.module';
-import { AppRoutingModule } from './app.routing';
 import { NavModule } from './components/navbar/navbar.module';
+
+import { AppRoutingModule } from './app.routing';
+import { AppComponent } from './app.component';
 
 /*export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   return (): Promise<void> =>

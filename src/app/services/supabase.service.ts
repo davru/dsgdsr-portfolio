@@ -7,12 +7,21 @@ import {
 } from '@supabase/supabase-js';
 import { environment } from '../../environments/environment';
 import { Project, ProjectImage } from '../interfaces/project';
+import { BlogPost } from '../interfaces/blog';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SupabaseService {
   private supabase: SupabaseClient;
+
+  private _projects: Project[];
+  public set projects(p: Project[]) { this._projects = p; }
+  public get projects(): Project[] { return this._projects; }
+
+  private _posts: BlogPost[];
+  public set posts(p: BlogPost[]) { this._posts = p; }
+  public get posts(): BlogPost[] { return this._posts; }
 
   constructor(private sanitizer: DomSanitizer) {
     this.supabase = createClient(
@@ -25,11 +34,11 @@ export class SupabaseService {
     return this.supabase.from('projects').select('*');
   }
 
-  public getPosts(): PromiseLike<PostgrestSingleResponse<any[]>> {
+  public getPosts(): PromiseLike<PostgrestSingleResponse<BlogPost[]>> {
     return this.supabase.from('posts').select('*');
   }
 
-  public getPost(slug: string): PromiseLike<PostgrestSingleResponse<any>> {
+  public getPost(slug: string): PromiseLike<PostgrestSingleResponse<BlogPost>> {
     return this.supabase.from('posts').select('*').eq('slug', slug).single();
   }
 
