@@ -32,9 +32,19 @@
         margin-bottom: 1em;
       }
 
-      .social-icon-link {
+      .social-icon__link {
         display: inline-block;
         padding: .6em 0;
+
+        &__text {
+          clip-path: inset(100%);
+          clip: rect(1px, 1px, 1px, 1px);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+        }
         
         .icon {
           max-width: 1.4em;
