@@ -6,7 +6,7 @@ import {
   SupabaseClient,
 } from '@supabase/supabase-js';
 import { environment } from '../../environments/environment';
-import { Project, ProjectImage } from '../interfaces/project';
+import { Project } from '../interfaces/project';
 import { BlogPost } from '../interfaces/blog';
 
 @Injectable({
@@ -26,7 +26,14 @@ export class SupabaseService {
   constructor(private sanitizer: DomSanitizer) {
     this.supabase = createClient(
       environment.supabaseUrl,
-      environment.supabaseKey
+      environment.supabaseKey,
+      {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+          'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT'
+        }
+      }
     );
   }
 
@@ -40,10 +47,6 @@ export class SupabaseService {
 
   public getPost(slug: string): PromiseLike<PostgrestSingleResponse<BlogPost>> {
     return this.supabase.from('posts').select('*').eq('slug', slug).single();
-  }
-
-  public downloadImage(bucket: string, path: string): Promise<ProjectImage> {
-    return this.supabase.storage.from(bucket).download(path);
   }
 
   public sanitizeUrl(imageUrl: Blob): SafeUrl {

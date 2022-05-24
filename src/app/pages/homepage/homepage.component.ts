@@ -17,18 +17,11 @@ export class HomepageComponent implements OnInit {
             this.projects = this.supabaseService.projects;
         } else {
             this.supabaseService.getProjects().then(data => {
-                this.projects = data.data;
-
-                this.projects.forEach((project, index) => {
-                    this.supabaseService.downloadImage('project-images', project.image_url).then(image => {
-                        project.featured_image = this.supabaseService.sanitizeUrl(image.data);
-                        project.index = index;
-
-                        if (index === this.projects.length - 1) {
-                            this.supabaseService.projects = this.projects;
-                        }
-                    });
+                this.projects = data.data.map((p, idx) => {
+                    p.index = idx;
+                    return p;
                 });
+                this.supabaseService.projects = this.projects;
             });
         }
     }

@@ -9,7 +9,6 @@ const ProjectMock: Project = {
   description: 'description',
   tags: [],
   image_url: 'http://image.test.dev/image.png',
-  featured_image: 'blob::image.png',
   url: 'http://url.test.dev/',
   links: []
 };
@@ -71,20 +70,6 @@ describe('FeaturedProjectComponent', () => {
       expect(anchor).toBeFalsy();
       // Reset to avoid tests failing
       component.project.url = 'http://url.test.dev/';
-    });
-
-    it('should render featured image (Blob) properly', () => {
-      const imageSrcBlob = componentElement.querySelector('.project__image').src;
-      expect(imageSrcBlob).toEqual(`unsafe:${ProjectMock.featured_image}`);
-    });
-
-    xit('should render project image url if featured_image is missing', () => {
-      component.project.featured_image = null;
-      fixture.detectChanges();
-      const imageSrc = componentElement.querySelector('.project__image').src;
-      expect(imageSrc).toEqual(ProjectMock.image_url);
-      // Reset to avoid tests failing
-      component.project.featured_image = 'blob::image.png';
     });
   });
 });
