@@ -52,9 +52,6 @@ Thumbs.db
 src/ngsw-worker.js
 src/ngsw.json
 
-# Local testing data
-src/assets/data
-
 # Lockfiles
 yarn.lock
 

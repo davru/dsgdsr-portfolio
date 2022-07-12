@@ -6,7 +6,6 @@ import {
   SupabaseClient,
 } from '@supabase/supabase-js';
 import { environment } from '../../environments/environment';
-import { Project } from '../interfaces/project';
 import { BlogPost } from '../interfaces/blog';
 
 @Injectable({
@@ -15,13 +14,13 @@ import { BlogPost } from '../interfaces/blog';
 export class SupabaseService {
   private supabase: SupabaseClient;
 
-  private _projects: Project[];
-  public set projects(p: Project[]) { this._projects = p; }
-  public get projects(): Project[] { return this._projects; }
-
   private _posts: BlogPost[];
-  public set posts(p: BlogPost[]) { this._posts = p; }
-  public get posts(): BlogPost[] { return this._posts; }
+  public set posts(p: BlogPost[]) {
+    this._posts = p;
+  }
+  public get posts(): BlogPost[] {
+    return this._posts;
+  }
 
   constructor(private sanitizer: DomSanitizer) {
     this.supabase = createClient(
@@ -30,15 +29,13 @@ export class SupabaseService {
       {
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-          'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT'
-        }
+          'Access-Control-Allow-Headers':
+            'Origin, X-Requested-With, Content-Type, Accept',
+          'Access-Control-Allow-Methods':
+            'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT',
+        },
       }
     );
-  }
-
-  public getProjects(): PromiseLike<PostgrestSingleResponse<Project[]>> {
-    return this.supabase.from('projects').select('*');
   }
 
   public getPosts(): PromiseLike<PostgrestSingleResponse<BlogPost[]>> {

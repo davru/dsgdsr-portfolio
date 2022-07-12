@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "slug": "spotifyrics",
+        "name": "Spotifyrics",
+        "description": "It is a small desktop app developed with React and Electron, allowing you to control your Spotify client and display real-time lyrics depending on the song you are listening to without logging in.",
+        "tags": [
+            "React",
+            "Electron",
+            "TypeScript",
+            "Webpack",
+            "Genius API"
+        ],
+        "links": [
+            {
+                "url": "https://github.com/dsgdsr/spotifyrics",
+                "icon": "github"
+            },
+            {
+                "url": "https://spotifyrics.dsgdsr.me",
+                "icon": "external-link"
+            }
+        ],
+        "image_url": "https://giwupsmiqjwfwyihjfwv.supabase.co/storage/v1/object/public/projects/spotifyrics.png",
+        "url": "https://spotifyrics.dsgdsr.me/"
+    },
+    {
+        "id": 1,
+        "slug": "pykedex",
+        "name": "Pykedex",
+        "description": "Cute small remake of an old project done in python. Mimicked using React web and an integrated terminal simulating python CLI, it works as a simple Pokedex retrieving pokemon stats and sprites.",
+        "tags": [
+            "React",
+            "Axios",
+            "PokeAPI"
+        ],
+        "links": [
+            {
+                "url": "https://pykedex.dsgdsr.me",
+                "icon": "external-link"
+            }
+        ],
+        "image_url": "https://giwupsmiqjwfwyihjfwv.supabase.co/storage/v1/object/public/projects/pykedex.png\n",
+        "url": "https://pykedex.dsgdsr.me"
+    }
+]
