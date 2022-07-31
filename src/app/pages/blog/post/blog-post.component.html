@@ -1,16 +1,19 @@
 <div class="blog-post__wrapper">
-    <div class="blog-post__title">
-        <h1>{{ post?.title }}</h1>
-        <app-tag-list
-            [ngStyle]="{'float': 'right'}"
-            [tags]="post?.tags"
-            [style]="{
-                color: 'var(--color-text-main)',
-                fontSize: '.8em'
-            }"
-            backgroundColor="var(--color-text-main)"
-        ></app-tag-list>
-    </div>
+  <div class="blog-post__title">
+    <h1>{{ post?.title }}</h1>
+    <app-tag-list
+      [ngStyle]="{ float: 'right' }"
+      [tags]="post?.tags"
+      [style]="{
+        color: 'var(--color-text-main)',
+        fontSize: '.8em'
+      }"
+      backgroundColor="var(--color-text-main)"
+    ></app-tag-list>
+  </div>
 
-    <markdown [data]="post?.body" emoji></markdown>
+  <markdown
+    [src]="'./../../../../assets/data/posts/' + post?.slug + '.md'"
+    emoji
+  ></markdown>
 </div>

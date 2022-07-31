@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogPost } from '../../../interfaces/blog';
-import { SupabaseService } from '../../../services/supabase.service';
+import posts from '../../../../assets/data/posts.json';
+// import { HttpClient } from '@angular/common/http';
 
 @Component({
-    selector: 'app-blog-post',
-    templateUrl: './blog-post.component.html',
-    styleUrls: ['./blog-post.component.scss']
+  selector: 'app-blog-post',
+  templateUrl: './blog-post.component.html',
+  styleUrls: ['./blog-post.component.scss'],
 })
 export class BlogPostComponent implements OnInit {
-    public post: BlogPost;
+  public post: BlogPost;
+  public body: string;
 
-    constructor(
-        private readonly supabaseService: SupabaseService,
-        private readonly activatedRoute: ActivatedRoute
-    ) {}
+  constructor(private readonly activatedRoute: ActivatedRoute) {}
 
-    ngOnInit(): void {
-        this.activatedRoute.params.subscribe(params => {
-            this.supabaseService.getPost(params.slug).then(post => {
-                this.post = post.data;
-            });
-        });
-    }
+  async ngOnInit(): Promise<void> {
+    this.activatedRoute.params.subscribe(async (params) => {
+      this.post = (posts as BlogPost[]).find(
+        (post) => post.slug === params.slug
+      );
+    });
+  }
 }
