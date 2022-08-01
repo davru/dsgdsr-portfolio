@@ -21,7 +21,7 @@
                 "icon": "external-link"
             }
         ],
-        "image_url": "https://giwupsmiqjwfwyihjfwv.supabase.co/storage/v1/object/public/projects/spotifyrics.png",
+        "image_url": "https://cdn.dsgdsr.me/images/projects/spotifyrics.png",
         "url": "https://spotifyrics.dsgdsr.me/"
     },
     {
@@ -40,7 +40,7 @@
                 "icon": "external-link"
             }
         ],
-        "image_url": "https://giwupsmiqjwfwyihjfwv.supabase.co/storage/v1/object/public/projects/pykedex.png\n",
+        "image_url": "https://cdn.dsgdsr.me/images/projects/pykedex.png",
         "url": "https://pykedex.dsgdsr.me"
     }
 ]
