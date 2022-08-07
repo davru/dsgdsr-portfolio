@@ -1,6 +1,29 @@
 [
     {
-        "id": 0,
+        "id": 1,
+        "slug": "fastchat",
+        "name": "Fast-chat",
+        "description": "An easy and fast solution to avoid needing to add contacts before writing to them through WhatsApp. You are able to download the tool as an app (PWA) in your mobile devices.",
+        "tags": [
+            "React",
+            "PWA",
+            "Vite"
+        ],
+        "links": [
+            {
+                "url": "https://github.com/DSGDSR/whatsapp-fast-chat",
+                "icon": "github"
+            },
+            {
+                "url": "https://fastchat.dsgdsr.me",
+                "icon": "external-link"
+            }
+        ],
+        "image_url": "https://cdn.dsgdsr.me/images/projects/fastchat.jpg",
+        "url": "https://fastchat.dsgdsr.me"
+    },
+    {
+        "id": 2,
         "slug": "spotifyrics",
         "name": "Spotifyrics",
         "description": "It is a small desktop app developed with React and Electron, allowing you to control your Spotify client and display real-time lyrics depending on the song you are listening to without logging in.",
@@ -25,7 +48,7 @@
         "url": "https://spotifyrics.dsgdsr.me/"
     },
     {
-        "id": 1,
+        "id": 3,
         "slug": "pykedex",
         "name": "Pykedex",
         "description": "Cute small remake of an old project done in python. Mimicked using React web and an integrated terminal simulating python CLI, it works as a simple Pokedex retrieving pokemon stats and sprites.",
@@ -40,7 +63,7 @@
                 "icon": "external-link"
             }
         ],
-        "image_url": "https://cdn.dsgdsr.me/images/projects/pykedex.png",
+        "image_url": "https://cdn.dsgdsr.me/images/projects/pykedex.jpg",
         "url": "https://pykedex.dsgdsr.me"
     }
 ]

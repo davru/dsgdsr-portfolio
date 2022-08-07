@@ -1,6 +1,5 @@
-import { supabase } from './supabase.environment';
-
 export const environment = {
   production: false,
-  ...supabase
+  // Local DB test key
+  faunaSecret: 'fnAEs6H9cBACSS_1HBZA20uIaJ_62mDWvADWSpQ3',
 };
