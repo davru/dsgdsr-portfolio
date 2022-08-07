@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^11.2.13",
     "@angular/router": "^11.2.13",
     "angular-feather": "6.1.0",
+    "faunadb": "^4.6.0",
     "ngx-markdown": "~11.1.0",
     "prism-themes": "^1.9.0",
     "tslib": "^2.0.0",

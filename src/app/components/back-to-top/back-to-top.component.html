@@ -1,11 +1,16 @@
 <div class="bttop-container" (click)="scroll()">
-    <span class="{{ isAtTop && router.url === '/' ? null : 'hidden' }}">scroll</span>
-    <ng-container *ngIf="router.url === '/'; else elseTemplate">
-        <i-feather name="arrow-down" class="arrow-icon {{ isAtTop ? null : 'scrolling' }}"></i-feather>
-    </ng-container>
-    <ng-template #elseTemplate>
-        <span class="{{ isAtTop ? 'hidden' : null }}">
-            <i-feather name="arrow-down" class="arrow-icon scrolling"></i-feather>
-        </span>
-    </ng-template>
+  <span class="{{ isAtTop && router.url === '/' ? null : 'hidden' }}"
+    >scroll</span
+  >
+  <ng-container *ngIf="router.url === '/'; else elseTemplate">
+    <i-feather
+      name="arrow-down"
+      class="arrow-icon {{ isAtTop ? null : 'scrolling' }}"
+    ></i-feather>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <span class="{{ isAtTop ? 'hidden' : null }}">
+      <i-feather name="arrow-down" class="arrow-icon scrolling"></i-feather>
+    </span>
+  </ng-template>
 </div>
