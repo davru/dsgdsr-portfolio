@@ -1,0 +1,12 @@
+:host {
+  #progress-bar {
+    --scrollAmount: 0%;
+    
+    background: var(--color-text-main);;
+    width: var(--scrollAmount);
+    height: 3px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+}

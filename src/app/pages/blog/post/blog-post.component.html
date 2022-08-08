@@ -1,12 +1,14 @@
+<app-progress-bar></app-progress-bar>
+
 <div class="blog-post__wrapper">
   <div class="blog-post__title">
     <h1>{{ post?.title }}</h1>
     <app-tag-list
-      [ngStyle]="{ float: 'right' }"
       [tags]="post?.tags"
       [style]="{
         color: 'var(--color-text-main)',
-        fontSize: '.8em'
+        fontSize: '.8em',
+        textAlign: 'right'
       }"
       backgroundColor="var(--color-text-main)"
     ></app-tag-list>
