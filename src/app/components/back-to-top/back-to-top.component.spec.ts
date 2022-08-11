@@ -9,10 +9,7 @@ describe('FeaturedProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        BackToTopModule,
-        RouterTestingModule
-      ],
+      imports: [BackToTopModule, RouterTestingModule],
       declarations: [],
     }).compileComponents();
 
@@ -49,7 +46,14 @@ describe('FeaturedProjectComponent', () => {
     expect(spyWindowScroll).toHaveBeenCalledWith({
       left: document.body.scrollWidth,
       top: scrollOffset,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
+  });
+
+  it('should convert vh height to pixels', () => {
+    const spyVhToPixels = spyOn<any>(component, 'vhToPixels');
+    component['scroll']();
+
+    expect(spyVhToPixels).toHaveBeenCalledWith(component['homeOffsetScroll']);
   });
 });
