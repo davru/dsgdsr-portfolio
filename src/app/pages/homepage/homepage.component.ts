@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../interfaces/project';
 import projects from '../../../assets/data/projects.json';
+/*import db from '../../services/fauna.service';
+import {
+  Collection,
+  Map,
+  Paginate,
+  Documents,
+  Lambda,
+  Get,
+  Var,
+} from 'faunadb';*/
 
 @Component({
   selector: 'app-homepage',
@@ -17,5 +27,12 @@ export class HomepageComponent implements OnInit {
       p.index = idx;
       return p;
     });
+
+    /*db.query(
+      Map(
+        Paginate(Documents(Collection('products'))),
+        Lambda('X', Get(Var('X')))
+      )
+    );*/
   }
 }

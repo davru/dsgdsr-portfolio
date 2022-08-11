@@ -5,24 +5,23 @@ import { RouterModule } from '@angular/router';
 import { TagListModule } from '../../components/tag-list/tag-list.module';
 import { BlogPostComponent } from './post/blog-post.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { ProgressBarModule } from '../../components/progress-bar/progress-bar.module';
 
 @NgModule({
-    declarations: [
-        BlogListComponent,
-        BlogPostComponent
-    ],
-    imports: [
-        CommonModule,
+  declarations: [BlogListComponent, BlogPostComponent],
+  imports: [
+    CommonModule,
 
-        // Components
-        TagListModule,
-        MarkdownModule.forRoot(),
+    // Components
+    TagListModule,
+    ProgressBarModule,
+    MarkdownModule.forRoot(),
 
-        // Routing
-        RouterModule.forChild([
-            { path: '', component: BlogListComponent },
-            { path: ':slug', component: BlogPostComponent }
-        ])
-    ]
+    // Routing
+    RouterModule.forChild([
+      { path: '', component: BlogListComponent },
+      { path: ':slug', component: BlogPostComponent },
+    ]),
+  ],
 })
 export class BlogModule {}
