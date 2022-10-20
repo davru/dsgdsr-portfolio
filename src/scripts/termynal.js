@@ -8,16 +8,15 @@
  * @license MIT
  */
 
-'use strict';
+"use strict";
 
 /** Generate a terminal widget. */
 export class Termynal {
-  constructor(container = '#termynal', options = {}) {
+  constructor(container = "#termynal", options = {}, doc) {
+    this.doc = doc;
     this.container =
-      typeof container === 'string'
-        ? document.querySelector(container)
-        : container;
-    this.pfx = `data-${options.prefix || 'ty'}`;
+      typeof container === "string" ? doc.querySelector(container) : container;
+    this.pfx = `data-${options.prefix || "ty"}`;
     this.startDelay =
       options.startDelay ||
       parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) ||
@@ -37,7 +36,7 @@ export class Termynal {
     this.progressChar =
       options.progressChar ||
       this.container.getAttribute(`${this.pfx}-progressChar`) ||
-      '█';
+      "█";
     this.progressPercent =
       options.progressPercent ||
       parseFloat(this.container.getAttribute(`${this.pfx}-progressPercent`)) ||
@@ -45,7 +44,7 @@ export class Termynal {
     this.cursor =
       options.cursor ||
       this.container.getAttribute(`${this.pfx}-cursor`) ||
-      '▋';
+      "▋";
     this.lineData = this.lineDataToElements(options.lineData || []);
     if (!options.noInit) this.init();
   }
@@ -63,14 +62,16 @@ export class Termynal {
      * Calculates width and height of Termynal container.
      * If container is empty and lines are dynamically loaded, defaults to browser `auto` or CSS.
      */
-    const containerStyle = getComputedStyle(this.container);
+    const containerStyle = this.doc.defaultView.getComputedStyle(
+      this.container
+    );
     this.container.style.width =
-      containerStyle.width !== '0px' ? containerStyle.width : undefined;
+      containerStyle.width !== "0px" ? containerStyle.width : undefined;
     this.container.style.minHeight =
-      containerStyle.height !== '0px' ? containerStyle.height : undefined;
+      containerStyle.height !== "0px" ? containerStyle.height : undefined;
 
-    this.container.setAttribute('data-termynal', '');
-    this.container.innerHTML = '';
+    this.container.setAttribute("data-termynal", "");
+    this.container.innerHTML = "";
     this.start();
   }
 
@@ -84,11 +85,11 @@ export class Termynal {
       const type = line.getAttribute(this.pfx);
       const delay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
 
-      if (type == 'input') {
+      if (type == "input") {
         line.setAttribute(`${this.pfx}-cursor`, this.cursor);
         await this.type(line);
         await this._wait(delay);
-      } else if (type == 'progress') {
+      } else if (type == "progress") {
         await this.progress(line);
         await this._wait(delay);
       } else {
@@ -107,7 +108,7 @@ export class Termynal {
   async type(line) {
     const chars = [...line.textContent];
     const delay = line.getAttribute(`${this.pfx}-typeDelay`) || this.typeDelay;
-    line.textContent = '';
+    line.textContent = "";
     this.container.appendChild(line);
 
     for (let char of chars) {
@@ -128,7 +129,7 @@ export class Termynal {
     const chars = progressChar.repeat(progressLength);
     const progressPercent =
       line.getAttribute(`${this.pfx}-progressPercent`) || this.progressPercent;
-    line.textContent = '';
+    line.textContent = "";
     this.container.appendChild(line);
 
     for (let i = 1; i < chars.length + 1; i++) {
@@ -158,9 +159,9 @@ export class Termynal {
    */
   lineDataToElements(lineData) {
     return lineData.map((line) => {
-      let div = document.createElement('div');
+      let div = this.doc.createElement("div");
       div.innerHTML = `<span ${this._attributes(line)}>${
-        line.value || ''
+        line.value || ""
       }</span>`;
 
       return div.firstElementChild;
@@ -174,13 +175,13 @@ export class Termynal {
    * @returns {string} - String of attributes.
    */
   _attributes(line) {
-    let attrs = '';
+    let attrs = "";
     for (let prop in line) {
       attrs += this.pfx;
 
-      if (prop === 'type') {
+      if (prop === "type") {
         attrs += `="${line[prop]}" `;
-      } else if (prop !== 'value') {
+      } else if (prop !== "value") {
         attrs += `-${prop}="${line[prop]}" `;
       }
     }
@@ -191,10 +192,8 @@ export class Termynal {
 
 /**
  * HTML API: If current script has container(s) specified, initialise Termynal.
- */
-if (document.currentScript.hasAttribute('data-termynal-container')) {
-  const containers = document.currentScript.getAttribute(
-    'data-termynal-container'
-  );
-  containers.split('|').forEach((container) => new Termynal(container));
-}
+ 
+if (this.doc.currentScript.hasAttribute("data-termynal-container")) {
+  const containers = this.doc.currentScript.getAttribute("data-termynal-container");
+  containers.split("|").forEach((container) => new Termynal(container));
+}*/

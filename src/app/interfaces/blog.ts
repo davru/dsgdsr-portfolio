@@ -3,4 +3,9 @@ export interface BlogPost {
   title: string;
   summary: string;
   tags: string[];
+  meta: BlogMeta;
+}
+
+export interface BlogMeta {
+  description: string;
 }

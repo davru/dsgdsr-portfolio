@@ -1,29 +1,33 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-progress-bar',
-  templateUrl: './progress-bar.component.html',
-  styleUrls: ['./progress-bar.component.scss'],
+    selector: 'app-progress-bar',
+    templateUrl: './progress-bar.component.html',
+    styleUrls: ['./progress-bar.component.scss'],
 })
 export class ProgressBarComponent implements OnInit, OnDestroy {
-  ngOnInit(): void {
-    document.addEventListener('scroll', this.onScroll);
-  }
+    constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  ngOnDestroy(): void {
-    document.removeEventListener('scroll', this.onScroll);
-  }
+    ngOnInit(): void {
+        this.document.addEventListener('scroll', this.onScroll);
+    }
 
-  onScroll(): void {
-    const docElem = document.documentElement;
-    const docBody = document.body;
-    const scrollTop = docElem['scrollTop'] || docBody['scrollTop'];
-    const scrollBottom =
-      (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight;
-    const scrollPercent = (scrollTop / scrollBottom) * 100 + '%';
+    ngOnDestroy(): void {
+        this.document.removeEventListener('scroll', this.onScroll);
+    }
 
-    document
-      .getElementById('progress-bar')
-      .style.setProperty('--scrollAmount', scrollPercent);
-  }
+    onScroll(): void {
+        const docElem = this.document.documentElement;
+        const docBody = this.document.body;
+        const scrollTop = docElem['scrollTop'] || docBody['scrollTop'];
+        const scrollBottom =
+            (docElem['scrollHeight'] || docBody['scrollHeight']) -
+            window.innerHeight;
+        const scrollPercent = (scrollTop / scrollBottom) * 100 + '%';
+
+        this.document
+            .getElementById('progress-bar')
+            .style.setProperty('--scrollAmount', scrollPercent);
+    }
 }
