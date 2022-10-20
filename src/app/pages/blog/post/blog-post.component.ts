@@ -36,13 +36,40 @@ export class BlogPostComponent implements OnInit {
     }
 
     private setMeta(): void {
-        const tags = Object.keys(this.post.meta).map((tag) => {
-            return {
-                property: tag,
-                content: this.post.meta[tag],
-            };
-        });
-
-        this.meta.addTags(tags);
+        this.meta.addTags([
+            ...this.post.meta,
+            {
+                name: 'description',
+                content: `DSGDSR Blog - ${this.post.summary}`,
+            },
+            {
+                property: 'og:description',
+                content: this.post.summary,
+            },
+            {
+                name: 'twitter:description',
+                content: this.post.summary,
+            },
+            {
+                property: 'og:type',
+                content: 'website',
+            },
+            {
+                name: 'twitter:card',
+                content: 'summary_large_image',
+            },
+            {
+                property: 'twitter:domain',
+                content: 'dsgdsr.me',
+            },
+            {
+                name: 'twitter:title',
+                content: this.post.title,
+            },
+            {
+                property: 'og:title',
+                content: this.post.title,
+            },
+        ]);
     }
 }

@@ -1,11 +1,9 @@
-export interface BlogPost {
-  slug: string;
-  title: string;
-  summary: string;
-  tags: string[];
-  meta: BlogMeta;
-}
+import { MetaDefinition } from '@angular/platform-browser';
 
-export interface BlogMeta {
-  description: string;
+export interface BlogPost {
+    slug: string;
+    title: string;
+    summary: string;
+    tags: string[];
+    meta: MetaDefinition[];
 }
