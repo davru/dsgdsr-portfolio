@@ -10,11 +10,11 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
     ngOnInit(): void {
-        this.document.addEventListener('scroll', this.onScroll);
+        this.document.addEventListener('scroll', this.onScroll.bind(this));
     }
 
     ngOnDestroy(): void {
-        this.document.removeEventListener('scroll', this.onScroll);
+        this.document.removeEventListener('scroll', this.onScroll.bind(this));
     }
 
     onScroll(): void {
