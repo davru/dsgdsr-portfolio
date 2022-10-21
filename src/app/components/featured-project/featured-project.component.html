@@ -5,16 +5,23 @@
                 loading="lazy"
                 class="project__image"
                 [alt]="project?.name + ' - ' + project?.description"
-                [src]="project?.image_url"
+                src="/assets/images/projects/{{ project?.image_name }}"
             />
         </figure>
 
         <div class="project__links">
             <ng-container *ngFor="let link of project?.links">
-                <a [class]="'icon-' + link.icon" target="_blank" [href]="link.url">
+                <a
+                    [class]="'icon-' + link.icon"
+                    target="_blank"
+                    [href]="link.url"
+                >
                     <span class="project__link">
-                        <span class="project__link__text">{{link.icon}}</span>
-                        <i-feather class="project__link_icon" [name]="link.icon"></i-feather>
+                        <span class="project__link__text">{{ link.icon }}</span>
+                        <i-feather
+                            class="project__link_icon"
+                            [name]="link.icon"
+                        ></i-feather>
                     </span>
                 </a>
             </ng-container>
@@ -25,7 +32,12 @@
         <div class="project__container">
             <h3 class="project__title">
                 {{ project?.name }}
-                <ng-container *ngTemplateOutlet="projectUrl; context:{ url: project?.url }"></ng-container>
+                <ng-container
+                    *ngTemplateOutlet="
+                        projectUrl;
+                        context: { url: project?.url }
+                    "
+                ></ng-container>
             </h3>
 
             <div class="project__body">
@@ -43,4 +55,3 @@
         <i-feather name="external-link" class="project__url-icon"></i-feather>
     </a>
 </ng-template>
-

@@ -5,7 +5,7 @@ export interface Project {
     url?: string;
     tags: string[];
     links?: ProjectLink[];
-    image_url: string;
+    image_name: string;
     index?: number;
 }
 
@@ -17,5 +17,5 @@ export interface ProjectLink {
 export enum ProjectLinkIcon {
     Github = 'github',
     Codepen = 'codepen',
-    External = 'external-link'
+    External = 'external-link',
 }
