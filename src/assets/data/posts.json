@@ -1,15 +1,15 @@
 [
   {
     "id": 0,
-    "slug": "first-blog-post",
+    "slug": "hello-world",
+    "body": "001.hello-world",
     "tags": [
-      "Portfolio",
       "Angular",
-      "Markdown",
-      "Supabase"
+      "Portfolio",
+      "Markdown"
     ],
     "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea natus dolorum nobis perferendis nemo repellendus? Repellat, numquam enim debitis illum aliquam quod ipsam. Pariatur eaque accusantium consequatur distinctio suscipit amet",
-    "title": "My first post",
+    "title": "Hello world! 👻",
     "meta": [
       {
         "property": "og:url",
