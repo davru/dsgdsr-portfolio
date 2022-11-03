@@ -1,0 +1,11 @@
+:host {
+  .error-container {
+    display: flex;
+    justify-content: center;
+
+    video {
+      pointer-events: none;
+      object-position: 70% 15%;
+    }
+  }
+}

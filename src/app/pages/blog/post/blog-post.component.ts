@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BlogPost } from '../../../interfaces/blog';
 import posts from '../../../../assets/data/posts.json';
 import { Meta } from '@angular/platform-browser';
@@ -16,7 +16,6 @@ export class BlogPostComponent implements OnInit {
 
     constructor(
         private readonly activatedRoute: ActivatedRoute,
-        private readonly router: Router,
         private readonly meta: Meta
     ) {}
 
@@ -28,9 +27,7 @@ export class BlogPostComponent implements OnInit {
 
     private setPost(slug: string): void {
         this.post = (posts as BlogPost[]).find((post) => post.slug === slug);
-        if (!this.post) {
-            this.router.navigate(['/']); // TODO not found
-        } else {
+        if (this.post) {
             this.setMeta();
         }
     }

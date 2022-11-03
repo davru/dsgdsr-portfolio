@@ -1,21 +1,26 @@
 <app-progress-bar></app-progress-bar>
 
 <div class="blog-post__wrapper">
-    <div class="blog-post__title">
-        <h1>{{ post?.title }}</h1>
-        <app-tag-list
-            [tags]="post?.tags"
-            [style]="{
-                color: 'var(--color-text-main)',
-                fontSize: '.8em',
-                textAlign: 'right'
-            }"
-            backgroundColor="var(--color-text-main)"
-        ></app-tag-list>
-    </div>
+    <ng-container *ngIf="post; else error">
+        <div class="blog-post__title">
+            <h1>{{ post?.title }}</h1>
+            <app-tag-list
+                [tags]="post?.tags"
+                [style]="{
+                    color: 'var(--color-text-main)',
+                    fontSize: '.8em',
+                    textAlign: 'right'
+                }"
+                backgroundColor="var(--color-text-main)"
+            ></app-tag-list>
+        </div>
 
-    <markdown
-        [src]="'./../../../../assets/data/posts/' + post?.body + '.md'"
-        emoji
-    ></markdown>
+        <markdown
+            [src]="'./../../../../assets/data/posts/' + post?.body + '.md'"
+            emoji
+        ></markdown>
+    </ng-container>
+    <ng-template #error>
+        <app-error-page></app-error-page>
+    </ng-template>
 </div>
