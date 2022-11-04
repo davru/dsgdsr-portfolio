@@ -51,7 +51,7 @@
         "id": 3,
         "slug": "pykedex",
         "name": "Pykedex",
-        "description": "Cute small remake of an old project done in python. Mimicked using React web and an integrated terminal simulating python CLI, it works as a simple Pokedex retrieving pokemon stats and sprites.",
+        "description": "Cute small remake of an old project made in Python. Mimicked using React web and an integrated terminal simulating python CLI, it works as a simple Pokedex retrieving pokemon stats and sprites.",
         "tags": [
             "React",
             "Axios",
