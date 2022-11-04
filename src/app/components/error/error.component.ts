@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
     selector: 'app-error-page',
     template: `
         <div class="error-container">
-            <video src="/assets/images/404.webm" autoplay loop></video>
+            <img src="/assets/images/404.gif" />
+
+            <div class="error-text">
+                <span>Oh! you seem lost... but you can still dance :)</span>
+                <span>or go to <a [routerLink]="['/']">homepage</a></span>
+            </div>
         </div>
     `,
     styleUrls: ['./error.component.scss'],

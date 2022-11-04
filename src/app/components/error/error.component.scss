@@ -1,11 +1,24 @@
 :host {
-  .error-container {
+  .error-container, .error-text {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    video {
-      pointer-events: none;
-      object-position: 70% 15%;
+  .error-text {
+    margin-top: 2.5em;
+    font-size: 1.1rem;
+    
+    span {
+      margin-top: 1em;
+    }
+
+    a {
+      color: var(--color-text-main);
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
