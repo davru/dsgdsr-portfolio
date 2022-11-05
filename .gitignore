@@ -57,3 +57,7 @@ yarn.lock
 
 # ENV variables
 src/environments/supabase.environment.ts
+
+# Favicon
+favicon.png
+favicon.psd
