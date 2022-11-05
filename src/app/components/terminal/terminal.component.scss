@@ -61,6 +61,11 @@
     box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
   }
 
+  [highlight] {
+    color: var(--color-text-main);
+    text-decoration: underline;
+  }
+
   [data-ty] {
     display: block;
     line-height: 1.8;
@@ -74,11 +79,10 @@
     }
   }
 
-  [data-ty]:before {
+  [data-ty]:not([data-ty="about"]):before {
     /* Set up defaults and ensure empty lines are displayed. */
     content: "";
     display: inline-block;
-    vertical-align: middle;
   }
 
   [data-ty="input"]:before,
@@ -87,12 +91,26 @@
     color: var(--color-text-main);
   }
 
+  [data-ty="about"] {
+    p:first-child {
+      margin: .65em 0;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: .75em;
+      }
+    }
+  }
+
   [data-ty="input"]:before {
     content: "⇉";
   }
 
-  [data-ty-prompt="▲"]:not(:first-child) {
-    margin-top: 1.4em;
+  [data-ty-prompt="▲"] {
+    &:not(:first-child) {
+      margin-top: 1.4em;
+    }
   }
 
   [data-ty][data-ty-prompt]:before {
