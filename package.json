@@ -14,6 +14,7 @@
     "lint": "ng lint",
     "gzip": "rm -rf ./dist/*-gzip && gzipper c --verbose --output-file-format [filename].[ext] ./dist/portfolio ./dist/portfolio-gzip",
     "dev:ssr": "ng run portfolio:serve-ssr",
+    "dev:ssr:mac": "NODE_OPTIONS=--openssl-legacy-provider ng run portfolio:serve-ssr",
     "serve:ssr": "node dist/portfolio/server/main.js",
     "build:ssr": "ng build --configuration production && ng run portfolio:server:production",
     "prerender": "ng run portfolio:prerender",
