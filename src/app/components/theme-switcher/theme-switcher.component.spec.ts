@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ThemeModes } from '../../services/theme.service';
+import { ThemeModes, ThemeService } from '../../services/theme.service';
 import { ThemeSwitcherComponent } from './theme-switcher.component';
-import { ThemeSwitcherModule } from './theme-switcher.module';
 
 describe('FeaturedProjectComponent', () => {
   let fixture: ComponentFixture<ThemeSwitcherComponent>;
@@ -10,9 +9,10 @@ describe('FeaturedProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThemeSwitcherModule],
+      imports: [ThemeSwitcherComponent],
       declarations: [],
       schemas: [],
+      providers: [ThemeService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ThemeSwitcherComponent);
@@ -41,14 +41,14 @@ describe('FeaturedProjectComponent', () => {
   });
 
   it('should call service component when clicking', () => {
-    const spyService = spyOn(component['themeService'], 'setTheme');
+    const spyService = spyOn(component['themeService'] as any, 'setTheme');
 
     component.setTheme(ThemeModes.Light);
-    expect(spyService).toHaveBeenCalledWith(ThemeModes.Light);
+    expect(spyService).toHaveBeenCalledWith(ThemeModes.Light, component['renderer']);
     expect(component.theme).toBe(ThemeModes.Light);
 
     component.setTheme(ThemeModes.Dark);
-    expect(spyService).toHaveBeenCalledWith(ThemeModes.Dark);
+    expect(spyService).toHaveBeenCalledWith(ThemeModes.Dark, component['renderer']);
     expect(component.theme).toBe(ThemeModes.Dark);
   });
 });

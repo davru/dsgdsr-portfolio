@@ -18,12 +18,6 @@ describe('FeaturedProjectComponent', () => {
   let componentElement;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [FeaturedProjectComponent],
-      declarations: [],
-      schemas: [],
-    }).compileComponents();
-
     fixture = TestBed.createComponent(FeaturedProjectComponent);
     component = fixture.componentInstance;
     componentElement = fixture.debugElement.nativeElement;
