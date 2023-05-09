@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
-import { TerminalModule } from '../../components/terminal/terminal.module';
-import { FeaturedProjectModule } from '../../components/featured-project/featured-project.module';
+import { FeaturedProjectComponent } from '../../components/featured-project/featured-project.component';
 import { RouterModule } from '@angular/router';
+import { TerminalComponent } from '../../components/terminal/terminal.component';
 
 @NgModule({
     declarations: [
@@ -13,8 +13,8 @@ import { RouterModule } from '@angular/router';
         CommonModule,
 
         // Components
-        FeaturedProjectModule,
-        TerminalModule,
+        FeaturedProjectComponent,
+        TerminalComponent,
 
         // Routing
         RouterModule.forChild([{

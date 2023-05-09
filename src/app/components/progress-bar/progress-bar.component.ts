@@ -1,8 +1,10 @@
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
+    standalone: true,
     selector: 'app-progress-bar',
+    imports: [CommonModule],
     templateUrl: './progress-bar.component.html',
     styleUrls: ['./progress-bar.component.scss'],
 })

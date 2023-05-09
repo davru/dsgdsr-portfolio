@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogListComponent } from './list/blog-list.component';
 import { RouterModule } from '@angular/router';
-import { TagListModule } from '../../components/tag-list/tag-list.module';
+import { TagListComponent } from '../../components/tag-list/tag-list.component';
 import { BlogPostComponent } from './post/blog-post.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { ProgressBarModule } from '../../components/progress-bar/progress-bar.module';
-import { ErrorModule } from '../../components/error/error.module';
+import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
+import { ErrorPageComponent } from '../../components/error/error.component';
 
 @NgModule({
     declarations: [BlogListComponent, BlogPostComponent],
@@ -14,9 +14,9 @@ import { ErrorModule } from '../../components/error/error.module';
         CommonModule,
 
         // Components
-        TagListModule,
-        ProgressBarModule,
-        ErrorModule,
+        TagListComponent,
+        ProgressBarComponent,
+        ErrorPageComponent,
         MarkdownModule.forRoot(),
 
         // Routing

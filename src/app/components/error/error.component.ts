@@ -1,6 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
+    standalone: true,
     selector: 'app-error-page',
     template: `
         <div class="error-container">
@@ -12,6 +15,7 @@ import { Component } from '@angular/core';
             </div>
         </div>
     `,
+    imports: [CommonModule, RouterModule],
     styleUrls: ['./error.component.scss'],
 })
 export class ErrorPageComponent {

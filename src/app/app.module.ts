@@ -3,9 +3,9 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { HttpClientModule } from '@angular/common/http';
 
 // Component modules
-import { BackToTopModule } from './components/back-to-top/back-to-top.module';
-import { SocialLinksModule } from './components/social-links/social-links.module';
-import { NavModule } from './components/navbar/navbar.module';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { SocialLinksComponent } from './components/social-links/social-links.component';
+import { NavComponent } from './components/navbar/navbar.component';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
@@ -38,9 +38,9 @@ import { AppComponent } from './app.component';
     }),*/
 
     // Components
-    BackToTopModule,
-    SocialLinksModule,
-    NavModule
+    BackToTopComponent,
+    SocialLinksComponent,
+    NavComponent
   ],
   providers: [
     provideClientHydration()

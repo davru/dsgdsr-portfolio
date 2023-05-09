@@ -1,9 +1,16 @@
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
 
 @Component({
+    standalone: true,
     selector: 'app-nav',
+    imports: [
+        CommonModule,
+        RouterModule,
+        ThemeSwitcherComponent
+    ],
     templateUrl: `./navbar.component.html`,
     styleUrls: ['./navbar.component.scss'],
 })

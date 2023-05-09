@@ -1,8 +1,15 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ThemeModes, ThemeService } from '../../services/theme.service';
+import { CommonModule } from '@angular/common';
+import { IconsModule } from '../icons/icons.module';
 
 @Component({
+    standalone: true,
     selector: 'app-theme-switcher',
+    imports: [
+        CommonModule,
+        IconsModule
+    ],
     templateUrl: './theme-switcher.component.html',
     styleUrls: ['./theme-switcher.component.scss'],
 })

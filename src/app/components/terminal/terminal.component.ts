@@ -1,9 +1,12 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Termynal } from '../../../scripts/termynal';
+import { RouterModule } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-terminal',
+  imports: [CommonModule, RouterModule],
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.scss'],
 })

@@ -1,8 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { Project } from '../../interfaces/project';
+import { CommonModule } from '@angular/common';
+import { IconsModule } from '../icons/icons.module';
+import { TagListComponent } from '../tag-list/tag-list.component';
 
 @Component({
+    standalone: true,
     selector: 'app-featured-project',
+    imports: [
+        CommonModule,
+        IconsModule,
+        TagListComponent
+    ],
     templateUrl: './featured-project.component.html',
     styleUrls: ['./featured-project.component.scss']
 })

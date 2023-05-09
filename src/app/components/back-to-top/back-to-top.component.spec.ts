@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BackToTopComponent } from './back-to-top.component';
-import { BackToTopModule } from './back-to-top.module';
+import { BackToTopComponent } from './back-to-top.component';
 
 describe('FeaturedProjectComponent', () => {
   let fixture: ComponentFixture<BackToTopComponent>;
@@ -9,7 +9,7 @@ describe('FeaturedProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BackToTopModule, RouterTestingModule],
+      imports: [BackToTopComponent, RouterTestingModule],
       declarations: [],
     }).compileComponents();
 

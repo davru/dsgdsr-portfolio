@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ProgressBarComponent } from './progress-bar.component';
-import { ProgressBarModule } from './progress-bar.module';
+import { ProgressBarComponent } from './progress-bar.module';
 
 describe('FeaturedProjectComponent', () => {
   let fixture: ComponentFixture<ProgressBarComponent>;
@@ -9,7 +9,7 @@ describe('FeaturedProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProgressBarModule, RouterTestingModule],
+      imports: [ProgressBarComponent, RouterTestingModule],
       declarations: [],
     }).compileComponents();
 

@@ -1,14 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Project } from '../../interfaces/project';
 import { FeaturedProjectComponent } from './featured-project.component';
-import { FeaturedProjectModule } from './featured-project.module';
 
 const ProjectMock: Project = {
   name: 'test project',
   slug: 'test-project',
   description: 'description',
   tags: [],
-  image_url: 'http://image.test.dev/image.png',
+  image_name: 'http://image.test.dev/image.png',
   url: 'http://url.test.dev/',
   links: []
 };
@@ -20,7 +19,7 @@ describe('FeaturedProjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeaturedProjectModule],
+      imports: [FeaturedProjectComponent],
       declarations: [],
       schemas: [],
     }).compileComponents();
