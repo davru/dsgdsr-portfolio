@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 // Component modules
@@ -42,14 +42,15 @@ import { AppComponent } from './app.component';
     SocialLinksModule,
     NavModule
   ],
-  /*providers: [
-    {
+  providers: [
+    provideClientHydration()
+    /*{
       provide: APP_INITIALIZER,
       useFactory: checkForUpdates,
       multi: true,
       deps: [SwUpdate]
-    }
-  ],*/
+    }*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
