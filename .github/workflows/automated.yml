@@ -1,16 +1,18 @@
-name: [Production] Deploy portfolio
+name: [Preview] Automated deploy
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-on: workflow_dispatch
+on: 
+  push:
+    branches: 
+      - main
 
 jobs:
   web-deploy:
-    name: Deploy portfolio to production
+    name: Deploy portfolio preview
     runs-on: ubuntu-latest
-    environment: prod
 
     steps:
       - name: Get latest code
@@ -24,8 +26,11 @@ jobs:
       - name: Install NPM Modules
         run: yarn install
 
+      - name: Run Angular tests
+        run: yarn test:prod
+
       - name: Vercel pull
-        run: yarn vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: yarn vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel build
         run: yarn vercel build --token=${{ secrets.VERCEL_TOKEN }}
