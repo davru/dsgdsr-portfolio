@@ -19,17 +19,22 @@ export class ProgressBarComponent implements OnInit, OnDestroy {
         this.document.removeEventListener('scroll', this.onScroll.bind(this));
     }
 
-    onScroll(): void {
+    private getScrollPercent(): number {
         const docElem = this.document.documentElement;
         const docBody = this.document.body;
         const scrollTop = docElem['scrollTop'] || docBody['scrollTop'];
         const scrollBottom =
             (docElem['scrollHeight'] || docBody['scrollHeight']) -
             window.innerHeight;
-        const scrollPercent = (scrollTop / scrollBottom) * 100 + '%';
+
+        return ((scrollTop / scrollBottom) * 100) || 0;
+    }
+
+    private onScroll(): void {
+        const scrollPercent = this.getScrollPercent();
 
         this.document
             .getElementById('progress-bar')
-            .style.setProperty('--scrollAmount', scrollPercent);
+            .style.setProperty('--scrollAmount', scrollPercent + '%');
     }
 }

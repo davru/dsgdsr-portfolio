@@ -1,13 +1,10 @@
 name: Run tests on main branch push
 
-on: 
-  push:
-    branches: 
-      - main
+on: workflow_dispatch
       
 jobs:
   web-deploy:
-    name: Run Angular tests
+    name: Run Angular tests (NOT USED)
     runs-on: ubuntu-latest
 
     steps:
