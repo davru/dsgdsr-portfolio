@@ -1,4 +1,4 @@
-name: [Production] Deploy portfolio
+name: (PROD) Deploy portfolio
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
