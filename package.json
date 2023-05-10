@@ -61,6 +61,7 @@
     "sftp-upload": "^1.0.4",
     "ts-node": "~10.9.1",
     "tslint": "~6.1.0",
-    "typescript": "~5.0.4"
+    "typescript": "~5.0.4",
+    "vercel": "^29.1.1"
   }
 }
