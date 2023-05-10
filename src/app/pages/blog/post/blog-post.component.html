@@ -15,10 +15,7 @@
             ></app-tag-list>
         </div>
 
-        <markdown
-            [src]="'./../../../../assets/data/posts/' + post?.body + '.md'"
-            emoji
-        ></markdown>
+        <markdown emoji>{{ markdown }}</markdown>
     </ng-container>
     <ng-template #error>
         <app-error-page></app-error-page>

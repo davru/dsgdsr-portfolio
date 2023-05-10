@@ -7,6 +7,8 @@ import { BlogPostComponent } from './post/blog-post.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
 import { ErrorPageComponent } from '../../components/error/error.component';
+import { BlogPostResolver } from './post/blog-post.resolver';
+import { PostService } from '../../services/post.service';
 
 @NgModule({
     declarations: [BlogListComponent, BlogPostComponent],
@@ -22,8 +24,15 @@ import { ErrorPageComponent } from '../../components/error/error.component';
         // Routing
         RouterModule.forChild([
             { path: '', component: BlogListComponent },
-            { path: ':slug', component: BlogPostComponent },
+            {
+                path: ':slug',
+                component: BlogPostComponent,
+                resolve: {
+                    markdown: BlogPostResolver
+                }
+            },
         ]),
     ],
+    providers: [PostService]
 })
 export class BlogModule {}

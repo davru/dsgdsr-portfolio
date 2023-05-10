@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 // Component modules
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
@@ -9,6 +9,7 @@ import { NavComponent } from './components/navbar/navbar.component';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
+import { UniversalRelativeInterceptor } from './services/universal-relative.interceptor';
 
 /*export const checkForUpdates = (swUpdate: SwUpdate): (() => Promise<any>) => {
   return (): Promise<void> =>
@@ -43,7 +44,12 @@ import { AppComponent } from './app.component';
     NavComponent
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UniversalRelativeInterceptor,
+      multi: true
+    }
     /*{
       provide: APP_INITIALIZER,
       useFactory: checkForUpdates,

@@ -12,17 +12,21 @@ import { Meta } from '@angular/platform-browser';
 })
 export class BlogPostComponent implements OnInit {
     public post: BlogPost;
-    public body: string;
+    public markdown: string;
 
     constructor(
         private readonly activatedRoute: ActivatedRoute,
-        private readonly meta: Meta
+        private readonly meta: Meta,
     ) {}
 
     async ngOnInit(): Promise<void> {
         this.activatedRoute.params.subscribe(async (params) => {
             this.setPost(params.slug);
         });
+        this.activatedRoute.data.subscribe((params) => {
+            // TODO: no params
+            this.markdown = params?.markdown
+        })
     }
 
     private setPost(slug: string): void {
