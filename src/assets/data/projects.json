@@ -3,7 +3,7 @@
         "id": 1,
         "slug": "fastchat",
         "name": "Fast-chat",
-        "description": "An easy and fast solution to avoid needing to add contacts before writing to them through WhatsApp. You are able to download the tool as an app (PWA) in your mobile devices.",
+        "description": "An easy and fast solution to avoid needing to add contacts before writing to them through WhatsApp. You are able to install the tool as an app (PWA) in your mobile devices.",
         "tags": [
             "React",
             "PWA",
