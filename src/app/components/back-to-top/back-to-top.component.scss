@@ -10,16 +10,13 @@
     cursor: pointer;
     color: var(--text-color);
 
-    @media (max-width: 800px) {
-      display: none;
-    }
-
     .hidden {
       opacity: 0;
     }
     
-    span {
-      margin-right: .6em;
+    .text {
+      margin-right: .75em;
+      color: var(--color-text-main);
     }
 
     span, i-feather {
@@ -27,13 +24,17 @@
     }
     
     .arrow-icon {
-      width: 16px;
+      width: 19px;
       display: flex;
       align-items: center;
       transition: transform .75s ease;
 
       &.scrolling {
         transform: rotate(180deg);
+
+        @media (max-width: 800px) {
+          display: none;
+        }
       }
     }
   }

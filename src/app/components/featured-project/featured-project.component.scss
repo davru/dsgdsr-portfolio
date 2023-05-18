@@ -1,17 +1,24 @@
 :host {
-    --project--b-redius: .4em;
+    --project--b-radius: .4em;
+    --project-pink: #ff69c1;
 
     .featured-project {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        &:hover {
+            .project__image__filter {
+                opacity: 0;
+            }
+        }
     }
 
     .project__url {
         position: absolute;
         display: flex;
-        color: #ff69c1;
+        color: var(--project-pink);
         width: .9em;
     }
 
@@ -20,11 +27,21 @@
         width: 100%;
 
         .project__image {
-            border-radius: var(--project--b-redius);
+            border-radius: var(--project--b-radius);
             display: block;
             max-width: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            aspect-ratio: 16/9;
             box-shadow: 0px 10px 20px #00000030;
+            
+            &__filter {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: var(--bg-secondary-color);
+                opacity: .5;
+                transition: opacity 500ms;
+            }
         }
 
         .project__links {
@@ -40,7 +57,7 @@
             
             .project__link {
                 display: inline-flex;
-                border-radius: var(--project--b-redius);
+                border-radius: var(--project--b-radius);
                 background: var(--bg-secondary-color);
                 box-shadow: 0 0 8px rgb(0,0,0,.45);
                 transition: color .2s ease;
@@ -57,7 +74,7 @@
                 }
 
                 &:hover {
-                    color: #ff69c1;
+                    color: var(--project-pink);
                 }
                 
                 .project__link_icon {
@@ -74,7 +91,7 @@
             &:before {
                 content: '';
                 position: absolute;
-                border-radius: var(--project--b-redius);
+                border-radius: var(--project--b-radius);
                 background: var(--bg-secondary-color);
                 box-shadow: var(--terminal-shadow);
                 padding: .5em .6em .4em .6em;
@@ -98,16 +115,19 @@
         justify-content: center;
         flex-direction: column;
         margin-top: -20%;
+        pointer-events: none;
 
         .project__container {
-            border-radius: var(--project--b-redius);
+            border-radius: var(--project--b-radius);
             background: var(--bg-secondary-color);
             padding: 1.35em 1.75em 1.7em 1.75em;
             color: white;
             box-shadow: var(--terminal-shadow);
+            pointer-events: all;
 
             .project__title {
                 position: relative;
+                font-size: 1.2rem;
 
                 .project__url {
                     visibility: hidden;
@@ -121,7 +141,7 @@
             }
 
             .project__description {
-                margin-top: 1.25em;
+                margin-top: 1.35em;
                 font-size: .8em;
                 line-height: 1.5em;
             }

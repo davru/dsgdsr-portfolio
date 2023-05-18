@@ -5,7 +5,7 @@ import {
   Moon,
   ArrowDown,
   Github,
-  Twitter,
+  // Mail,
   Codepen,
   Linkedin,
   ExternalLink
@@ -16,7 +16,7 @@ const icons = {
   Moon,
   ArrowDown,
   Github,
-  Twitter,
+  // Mail,
   Codepen,
   Linkedin,
   ExternalLink

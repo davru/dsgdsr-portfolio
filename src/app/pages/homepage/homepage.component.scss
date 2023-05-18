@@ -1,19 +1,114 @@
 :host {
-    .featured-project__list {
+    #about-me {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        width: 1048px;
+        padding: 0 2.2rem;
+        margin: 0 auto;
+        
+        h2, h3, p {
+            color: var(--text-color);
+        }
+
+        header {
+            span {
+                font-size: 1.1rem;
+                color: var(--color-text-main);
+            }
+            
+            h2, h3 {
+                margin-top: 1rem;
+                font-family: Helvetica, Arial, sans-serif;
+                opacity: .95;
+                font-size: clamp(1rem, 4.3rem, 10vw);
+                text-indent: -0.15rem;
+
+                @media (min-width: 725px) {
+                    text-indent: -0.25rem;
+                }
+            }
+            
+            h3 {
+                opacity: .6;
+                margin: 0 0 1rem 0;
+            }
+        }
+
+        article {
+            p {
+                font-size: .95rem;
+                margin-top: 1.25rem;
+
+                @media (min-width: 725px) {
+                    width: 80%;
+                }
+
+                s {
+                    text-decoration: none;
+                    opacity: .8;
+                }
+            }
+        }
+    }
+
+    #featured-projects {
+        display: flex;
+        flex-direction: column;
         margin: .5em auto 5em auto;
         max-width: 100%;
         width: 980px;
         padding: 0 2.2em;
-
-        &-title {
-            color: var(--text-color);
-            text-align: center;
-            text-decoration: overline;
-            margin: 0;
-        }
+        gap: 6em;
 
         .featured-project__separator{
             height: 5em;
+        }
+    }
+
+    #contact {
+        margin: 12.5rem 0 10rem 0;
+        padding: 0 2.2em;
+            
+        pre {
+            color: var(--text-color);
+            margin: 6rem auto 0 auto;
+            background: var(--bg-secondary-color);
+            border-radius: 0.375em;
+            width: fit-content;
+            max-width: 100%;
+
+            code {
+                background-color: transparent;
+                line-height: 1.4;
+                font-size: 1rem;
+                display: block;
+                padding: 1.4rem 1.8rem;
+                display: block;
+                white-space: pre-wrap;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #featured-projects, #contact {
+        h3 {
+            color: var(--text-color);
+            text-align: center;
+            text-decoration: overline;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+    }
+
+    #about-me, #contact {
+        .hightlight, a {
+            color: var(--color-text-main);
         }
     }
 }
