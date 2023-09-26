@@ -13,6 +13,7 @@ jobs:
   web-deploy:
     name: Deploy portfolio preview
     runs-on: ubuntu-latest
+    environment: Preview
 
     steps:
       - name: Get latest code

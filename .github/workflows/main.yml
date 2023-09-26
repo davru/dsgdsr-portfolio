@@ -10,7 +10,7 @@ jobs:
   web-deploy:
     name: Deploy portfolio to production
     runs-on: ubuntu-latest
-    environment: prod
+    environment: Production
 
     steps:
       - name: Get latest code
@@ -23,6 +23,12 @@ jobs:
 
       - name: Install NPM Modules
         run: yarn install
+
+      - name: Install NPM Modules
+        run: yarn install
+
+      - name: Run UT and coverage
+        run: yarn test:prod
 
       - name: Vercel pull
         run: yarn vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
