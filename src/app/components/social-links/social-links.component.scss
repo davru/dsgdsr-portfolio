@@ -6,10 +6,6 @@
     margin: 0 1.6em;
     color: var(--text-color);
 
-    @media (max-width: 1000px) {
-      display: none;
-    }
-
     .social-icons-list {
       display: flex;
       flex-direction: column;
@@ -67,6 +63,30 @@
             stroke: transparent;
             fill: var(--text-color);
           }
+        }
+      }
+    }
+
+    @media (max-width: 1000px) {
+      position: absolute;
+      margin: 0;
+      padding-bottom: 1em;
+      width: 100%;
+      bottom: auto;
+
+      .social-icons-list {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+
+        &::after {
+          display: none;
+        }
+
+        .social-icon:last-child {
+          margin-bottom: 0;
         }
       }
     }

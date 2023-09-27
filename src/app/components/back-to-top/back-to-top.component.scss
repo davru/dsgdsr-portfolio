@@ -25,6 +25,10 @@
 
     span, i-feather {
       transition: opacity .2s ease;
+
+      ::ng-deep svg {
+        width: intrinsic;
+      }
     }
     
     .arrow-icon {
