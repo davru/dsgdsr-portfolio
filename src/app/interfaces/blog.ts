@@ -1,10 +1,11 @@
 import { MetaDefinition } from '@angular/platform-browser';
+import { LocalizedString } from './locale';
 
 export interface BlogPost {
-    title: string;
+    id: string;
+    title: LocalizedString;
     slug: string;
-    body: string;
-    summary: string;
+    summary: LocalizedString;
     tags: string[];
     meta: MetaDefinition[];
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../../../interfaces/blog';
 import posts from '../../../../assets/data/posts.json';
+import { Locales, TranslationService } from '../../../services/translation.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,8 +10,13 @@ import posts from '../../../../assets/data/posts.json';
 })
 export class BlogListComponent implements OnInit {
   public posts: BlogPost[] = [];
+  public locale: Locales;
 
-  constructor() {}
+  constructor(
+    translationService: TranslationService,
+  ) {
+    this.locale = translationService.getLocale();
+  }
 
   ngOnInit(): void {
     this.posts = posts as BlogPost[];

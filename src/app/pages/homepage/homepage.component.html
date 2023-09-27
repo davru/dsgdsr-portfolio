@@ -2,19 +2,18 @@
 
 <section id="about-me">
     <header>
-        <span>Hi, my name is</span>
-        <h2>David Sanchez.</h2>
-        <h3>I create solutions for the web.</h3>
+        <span [translate]="'HOME.ABOUT_ME.TITLE'"></span>
+        <h2 [translate]="'HOME.ABOUT_ME.NAME'"></h2>
+        <h3 [translate]="'HOME.ABOUT_ME.SUBTITLE'"></h3>
     </header>
     <article>
-        <p><s>I'm a front-end developer focused on creating engaging and interactive experiences. I have a strong eye for design and a deep understanding on optimizing web pages thanks to my experience working with different technologies.</s></p>
-
-        <p><s>Just a </s><span class="hightlight">JavaScript</span><s> lover with a focus on creativity and results, always seeking new challenges to grow my skills. Currenly working for </s><span class="hightlight">Innovation Group</span><s>.</s></p>
+        <p [innerHtml]="'HOME.ABOUT_ME.PARAGRAPH1' | translate"></p>
+        <p [innerHtml]="'HOME.ABOUT_ME.PARAGRAPH2' | translate"></p>
     </article>
 </section>
 
 <section id="featured-projects">
-    <h3>Featured work</h3>
+    <h3 [translate]="'HOME.FEATURED_WORK.TITLE'"></h3>
     <ng-container *ngFor="let project of projects">
         <app-featured-project
             [project]="project"
@@ -24,11 +23,11 @@
 </section>
 
 <section id="contact">
-    <h3>Contact me</h3>
-    <pre><code><span class="hightlight">▲</span> node
+    <h3 [translate]="'HOME.CONTACT_ME.TITLE'"></h3>
+    <pre><code><span class="highlight">▲</span> node
 
-<span class="hightlight">></span> import {{'{'}} MailService {{'}'}} from 'mail'
-<span class="hightlight">></span> MailService.search('dsgdsr 🦄')
+    <span class="highlight">></span> import {{'{'}} MailService {{'}'}} from 'mail'
+    <span class="highlight">></span> MailService.search('dsgdsr 🦄')
 
-Contact mail found: <a href="mailto:contact@dsgdsr.me">contact@dsgdsr.me</a></code></pre>
+    Contact mail found: <a href="mailto:contact@dsgdsr.me">contact@dsgdsr.me</a></code></pre>
 </section>

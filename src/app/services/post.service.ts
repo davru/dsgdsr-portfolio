@@ -11,9 +11,9 @@ export class PostService {
     constructor(private httpClient: HttpClient) {}
 
     public getPost(slug: string): Observable<string> {
-        const isFound = (posts as BlogPost[]).find((post) => post.slug === slug);
-        if (isFound) {
-            return this.httpClient.get('/assets/data/posts/' + slug + '.md', {
+        const post = (posts as BlogPost[]).find((post) => post.slug === slug);
+        if (post) {
+            return this.httpClient.get(`/assets/data/posts/${post.id}.${slug}.md`, {
                 responseType: 'text'
             });
         } else {

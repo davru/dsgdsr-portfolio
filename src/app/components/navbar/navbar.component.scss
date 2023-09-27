@@ -1,13 +1,17 @@
 :host {
   .nav {
     width: 100%;
-    padding: 1.8em 2.2em;
+    padding: 1.75rem;
     position: absolute;
     color: var(--text-color);
     top: 0; left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (min-width: 600px) {
+      padding: 1.8rem 2.2rem;
+    }
 
     .nav-logo {
       span, h1 {
@@ -21,7 +25,13 @@
       display: flex;
       align-items: center;
       font-weight: 500;
-      font-size: .95em;
+      font-size: .85em;
+      gap: 1.5em;
+
+      @media (min-width: 600px) {
+        gap: 2.5em;
+        font-size: .95em;
+      }
 
       a {
         text-decoration: none;
@@ -31,10 +41,6 @@
       .nav-link {
         cursor: pointer;
         transition: all .2s ease;
-
-        &:not(:first-child) {
-          margin-left: 2.5em;
-        }
 
         @media (max-width: 450px) {
           &:last-child {

@@ -1,7 +1,8 @@
 <div class="bttop-container" (click)="scroll()">
-  <span class="text {{ isAtTop && router.url === '/' ? null : 'hidden' }}"
-    >more about me</span
-  >
+  <span
+    class="text {{ isAtTop && router.url === '/' ? null : 'hidden' }}"
+    [translate]="'HOME.MORE_ABOUT_ME'"
+  ></span>
   <ng-container *ngIf="router.url === '/'; else elseTemplate">
     <i-feather
       name="arrow-down"

@@ -1,45 +1,87 @@
 :host {
     .blog-list__wrapper {
         margin: 0 auto;
-        padding: 9em 2.2em 5em 2.2em;
+        padding: 10.5rem 1.75rem 5rem 1.75rem;
         max-width: 100%;
         width: 700px;
         color: var(--text-color);
 
+        @media (min-width: 600px) {
+            padding: 11.5rem 2.2rem 5rem 2.2rem;
+        }
+
+        time {
+            font-size: .85em;
+            color: var(--color-text-secondary);
+        }
+
         .blog-list__post {
-            &_title {
-                display: inline-block;
-                margin-bottom: 1em;
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.5em;
 
                 h3 {
-                    width: -moz-fit-content;
-                    width: fit-content;
-
-                    // workaround for IE11
-                    display: table;
+                    font-size: 1.35em;
                 }
-                
-                &:hover {
+
+                .blog-list__post_title:hover {
                     text-decoration: overline;
+                }
+
+                time {
+                    display: none;
+
+                    @media (min-width: 600px) {
+                        display: block;
+                    }
                 }
             }
             
-            &_summary {
+            main {
                 font-size: .9em;
                 line-height: 1.5em;
                 margin-bottom: 1.75em;
             }
             
-            &_footer {
+            footer {
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
+                flex-direction: column-reverse;
+                align-items: flex-start;
                 
-                &__more {
-                    font-size: .8em;
+                @media (min-width: 600px) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    gap: 1em;
+                }
+
+                time {
+                    display: block;
+
+                    @media (min-width: 600px) {
+                        display: none;
+                    }
+                }
+
+                .blog-list__post_footer__more {
+                    width: 100%;
+                    margin-top: 1.25rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    @media (min-width: 600px) {
+                        width: auto;
+                        margin-top: 0;
+                    }
+                }
+                
+                .blog-list__post_footer__read-more {
+                    font-size: .85em;
                     color: var(--color-text-main);
                     font-weight: bold;
-                    float: right;
                 }
             }
         }

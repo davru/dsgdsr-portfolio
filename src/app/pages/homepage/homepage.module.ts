@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
 import { FeaturedProjectComponent } from '../../components/featured-project/featured-project.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     declarations: [
@@ -10,6 +11,7 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         CommonModule,
+        TranslateModule,
 
         // Components
         FeaturedProjectComponent,

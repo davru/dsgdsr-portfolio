@@ -1,15 +1,22 @@
 [
   {
-    "id": 0,
-    "slug": "hello-world",
-    "body": "001.hello-world",
+    "id": "001",
+    "slug": "exploring-the-power-of-bun",
+    "date": "2023-09-30",
     "tags": [
-      "Angular",
-      "Portfolio",
-      "Markdown"
+      "Bun",
+      "JavaScript",
+      "Node",
+      "Deno"
     ],
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea natus dolorum nobis perferendis nemo repellendus? Repellat, numquam enim debitis illum aliquam quod ipsam. Pariatur eaque accusantium consequatur distinctio suscipit amet",
-    "title": "Hello world! 👻",
+    "summary": {
+      "en": "Will be published in 3 days...",
+      "es": "Se publicará en 3 días..."
+    },
+    "title": {
+      "en": "Exploring the power of Bun 🧅",
+      "es": "Explorando el poder de Bun 🧅"
+    },
     "meta": [
       {
         "property": "og:url",

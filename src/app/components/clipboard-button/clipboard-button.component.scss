@@ -1,0 +1,22 @@
+:host {
+    color: var(--color-text-secondary);
+
+    &:hover {
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    /*svg {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+
+        &.show {
+            opacity: 100;
+        }
+        
+        &:last-child {
+            position: absolute;
+            left: 0;
+        }
+    }*/
+}

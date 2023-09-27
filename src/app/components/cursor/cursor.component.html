@@ -1,0 +1,8 @@
+<div class="cursor">
+    <div class="bubble pulse"
+        [class.link]="cursorStyle === 'external-link'"
+        [class.pulse]="cursorStyle === 'link'"
+    >
+        <i-feather *ngIf="cursorStyle === 'external-link'" name="plus"></i-feather>
+    </div>
+</div>

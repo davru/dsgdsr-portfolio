@@ -14,6 +14,14 @@ export class ThemeService {
 
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
+    public init(renderer: Renderer2): void {
+        this.setTheme(
+            (localStorage.getItem('theme-mode') as ThemeModes) ??
+                ThemeModes.Dark,
+            renderer
+        );
+    }
+
     public setTheme(theme: ThemeModes, renderer: Renderer2): void {
         this.theme = theme;
         localStorage.setItem('theme-mode', theme);

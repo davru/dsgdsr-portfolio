@@ -1,0 +1,26 @@
+{
+    "LOCALES": {
+        "en": "English",
+        "es": "Spanish"
+    },
+    "NAVBAR": {
+        "WORK": "work",
+        "BLOG": "blog"
+    },
+    "HOME": {
+        "MORE_ABOUT_ME": "more about me",
+        "ABOUT_ME": {
+            "TITLE": "Hi, my name is",
+            "NAME": "David Sánchez.",
+            "SUBTITLE": "I create solutions for the web.",
+            "PARAGRAPH1": "I'm a web developer focused on creating engaging and interactive experiences. I have a strong eye for design and a deep understanding on optimizing web apps thanks to my experience working with different technologies.",
+            "PARAGRAPH2": "Just a <span class=\"highlight\">JavaScript</span> lover with a focus on creativity and results, always seeking new challenges to grow my skills. Currenly working for <span class=\"highlight\">Innovation Group</span>."
+        },
+        "FEATURED_WORK": {
+            "TITLE": "Last projects"
+        },
+        "CONTACT_ME": {
+            "TITLE": "Contact me"
+        }
+    }
+}

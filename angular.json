@@ -30,16 +30,16 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/prism-themes/themes/prism-material-oceanic.min.css"
+              "node_modules/dracula-prism/dist/css/dracula-prism.min.css"
             ],
             "scripts": [
               "node_modules/marked/marked.min.js",
               "node_modules/prismjs/prism.js",
               "node_modules/emoji-toolkit/lib/js/joypixels.min.js",
-              "node_modules/prismjs/components/prism-python.min.js",
-              "node_modules/prismjs/components/prism-javascript.min.js",
-              "node_modules/prismjs/components/prism-typescript.min.js",
-              "node_modules/prismjs/components/prism-cshtml.min.js"
+              "node_modules/clipboard/dist/clipboard.min.js",
+              "node_modules/prismjs/components/prism-bash.min.js",
+              "node_modules/prismjs/components/prism-cshtml.min.js",
+              "node_modules/prismjs/components/prism-typescript.min.js"
             ],
             "serviceWorker": false,
             "vendorChunk": true,

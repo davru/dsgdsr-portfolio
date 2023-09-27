@@ -1,0 +1,26 @@
+{
+    "LOCALES": {
+        "en": "Inglés",
+        "es": "Español"
+    },
+    "NAVBAR": {
+        "WORK": "proyectos",
+        "BLOG": "blog"
+    },
+    "HOME": {
+        "MORE_ABOUT_ME": "más sobre mí",
+        "ABOUT_ME": {
+            "TITLE": "Hola! :), soy",
+            "NAME": "David Sánchez.",
+            "SUBTITLE": "Creo soluciones para la web.",
+            "PARAGRAPH1": "Soy un desarrollador web centrado en crear experiencias atractivas e interactivas. Tengo un buen ojo para el diseño y una gran experiencia en la optimización de aplicaciones web gracias a haber trabajado desde joven con diferentes tecnologías.",
+            "PARAGRAPH2": "Un amante de <span class=\"highlight\">JavaScript</span> con un principal enfoque en la creatividad y los resultados, siempre en busca de nuevos retos para seguir creciendo. Actualmente trabajando para <span class=\"highlight\">Innovation Group</span>."
+        },
+        "FEATURED_WORK": {
+            "TITLE": "Últimos proyectos"
+        },
+        "CONTACT_ME": {
+            "TITLE": "Contacto"
+        }
+    }
+}

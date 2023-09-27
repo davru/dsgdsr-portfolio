@@ -1,14 +1,21 @@
 <div class="blog-list__wrapper">
     <ng-container *ngFor="let post of posts">
         <div class="blog-list__post">
-            <a [routerLink]="['/blog', post?.slug]" class="blog-list__post_title">
-                <h3>{{ post?.title }}</h3>
-            </a>
+            <header>
+                <a [routerLink]="['/blog', post?.slug]" class="blog-list__post_title">
+                    <h3>{{ post?.title[locale] }}</h3>
+                </a>
 
-            <p class="blog-list__post_summary">{{ post?.summary }}</p>
+                <time>{{ post?.date | relativeTime }}</time>
+            </header>
 
-            <div class="blog-list__post_footer">
-                <a [routerLink]="['/blog', post?.slug]" class="blog-list__post_footer__more">read more...</a>
+            <main>{{ post?.summary[locale] }}</main>
+
+            <footer>
+                <div class="blog-list__post_footer__more">
+                    <time>{{ post?.date | relativeTime }}</time>
+                    <a [routerLink]="['/blog', post?.slug]" class="blog-list__post_footer__read-more">read more...</a>
+                </div>
             
                 <app-tag-list *ngIf="post?.tags"
                     [ngStyle]="{'float': 'right'}"
@@ -19,7 +26,7 @@
                     }"
                     backgroundColor="var(--color-text-main)"
                 ></app-tag-list>
-            </div>
+            </footer>
         </div>
     </ng-container>
 </div>

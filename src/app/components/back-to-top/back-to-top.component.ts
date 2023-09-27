@@ -2,13 +2,15 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-back-to-top',
   imports: [
       CommonModule,
-      IconsModule
+      IconsModule,
+      TranslateModule
   ],
   templateUrl: './back-to-top.component.html',
   styleUrls: ['./back-to-top.component.scss'],

@@ -1,16 +1,14 @@
 <div class="featured-project {{ rtl ? 'featured-project--rtl' : null }}">
     <div class="featured-image__container">
-        <a [href]="project?.url" target="_blank">
-            <figure>
-                <div class="project__image__filter"></div>
-                <img
-                    loading="lazy"
-                    class="project__image"
-                    [alt]="project?.name + ' - ' + project?.description"
-                    src="/assets/images/projects/{{ project?.image_name }}"
-                />
-            </figure>
-        </a>
+        <figure>
+            <img
+                loading="lazy"
+                class="project__image"
+                [alt]="project?.name + ' - ' + project?.description"
+                [attr.cursorLink]="project.url"
+                src="/assets/images/projects/{{ project?.image_name }}"
+            />
+        </figure>
 
         <div class="project__links">
             <ng-container *ngFor="let link of project?.links">
@@ -32,15 +30,9 @@
     </div>
 
     <div class="project__wrapper">
-        <div class="project__container">
+        <div class="project__container" [attr.cursorLink]="project.url">
             <h3 class="project__title">
                 {{ project?.name }}
-                <ng-container
-                    *ngTemplateOutlet="
-                        projectUrl;
-                        context: { project: project }
-                    "
-                ></ng-container>
             </h3>
 
             <div class="project__body">
@@ -53,7 +45,7 @@
     </div>
 </div>
 
-<ng-template #projectUrl let-project="project">
+<!--ng-template #projectUrl let-project="project">
     <a *ngIf="project?.url"
         [aria-describedby]="'url-' + project?.slug"
         [aria-label]="project?.name + ' project webpage'"
@@ -64,4 +56,4 @@
         <span aria-hidden="true" [id]="'url-' + project?.slug" style="display: none;">{{project?.name + ' project webpage'}}</span>
         <i-feather name="external-link" class="project__url-icon"></i-feather>
     </a>
-</ng-template>
+</ng-template-->

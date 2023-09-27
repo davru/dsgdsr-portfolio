@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogPost } from '../../../interfaces/blog';
 import posts from '../../../../assets/data/posts.json';
 import { Meta } from '@angular/platform-browser';
+import { ClipboardButtonComponent } from '../../../components/clipboard-button/clipboard-button.component';
+import { Locales, TranslationService } from '../../../services/translation.service';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -13,11 +15,16 @@ import { Meta } from '@angular/platform-browser';
 export class BlogPostComponent implements OnInit {
     public post: BlogPost;
     public markdown: string;
+    public locale: Locales;
+    readonly clipboardButton = ClipboardButtonComponent;
 
     constructor(
         private readonly activatedRoute: ActivatedRoute,
         private readonly meta: Meta,
-    ) {}
+        translationService: TranslationService,
+    ) {
+        this.locale = translationService.getLocale();
+    }
 
     async ngOnInit(): Promise<void> {
         this.activatedRoute.params.subscribe(async (params) => {
@@ -45,11 +52,11 @@ export class BlogPostComponent implements OnInit {
             },
             {
                 property: 'og:description',
-                content: this.post.summary,
+                content: this.post.summary[this.locale],
             },
             {
                 name: 'twitter:description',
-                content: this.post.summary,
+                content: this.post.summary[this.locale],
             },
             {
                 property: 'og:type',
@@ -65,11 +72,11 @@ export class BlogPostComponent implements OnInit {
             },
             {
                 name: 'twitter:title',
-                content: this.post.title,
+                content: `${this.post.title[this.locale]} - DSGDSR blog`
             },
             {
                 property: 'og:title',
-                content: this.post.title,
+                content: `${this.post.title[this.locale]} - DSGDSR blog`
             },
         ]);
     }

@@ -9,9 +9,16 @@ import { ProgressBarComponent } from '../../components/progress-bar/progress-bar
 import { ErrorPageComponent } from '../../components/error/error.component';
 import { BlogPostResolver } from './post/blog-post.resolver';
 import { PostService } from '../../services/post.service';
+import { RelativeTimePipe } from '../../pipes/relativeTime.pipe';
+import { ClipboardButtonComponent } from '../../components/clipboard-button/clipboard-button.component';
 
 @NgModule({
-    declarations: [BlogListComponent, BlogPostComponent],
+    declarations: [
+        BlogListComponent,
+        BlogPostComponent,
+        RelativeTimePipe,
+        ClipboardButtonComponent,
+    ],
     imports: [
         CommonModule,
 

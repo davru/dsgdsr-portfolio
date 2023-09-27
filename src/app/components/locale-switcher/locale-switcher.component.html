@@ -1,0 +1,10 @@
+<div class="locale-switcher">
+    <i-feather name="globe" class="lang-icon" (click)="toggle($event)"></i-feather>
+
+    <ul *ngIf="isOpen" id="locale-selector" (click)="toggle($event)">
+        <span class="selector-caret"></span>
+        <ng-container *ngFor="let locale of locales;">
+            <li (click)="onChange(locale)" [class.selected]="locale === currentLocale">{{ 'LOCALES.' + locale | translate }}</li>
+        </ng-container>
+    </ul>
+</div>

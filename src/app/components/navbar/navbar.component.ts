@@ -2,6 +2,8 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
+import { LocaleSwitcherComponent } from '../locale-switcher/locale-switcher.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     standalone: true,
@@ -9,7 +11,9 @@ import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.compone
     imports: [
         CommonModule,
         RouterModule,
-        ThemeSwitcherComponent
+        ThemeSwitcherComponent,
+        LocaleSwitcherComponent,
+        TranslateModule
     ],
     templateUrl: `./navbar.component.html`,
     styleUrls: ['./navbar.component.scss'],

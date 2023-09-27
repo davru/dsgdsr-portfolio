@@ -5,9 +5,17 @@
         flex-direction: column;
         justify-content: center;
         max-width: 100%;
-        width: 1048px;
-        padding: 0 2.2rem;
+        width: 820px;
+        padding: 0 1.75rem;
         margin: 0 auto;
+
+        @media (min-width: 1200px) {
+            width: 1048px;
+        }
+
+        @media (min-width: 600px) {
+            padding: 0 2.2rem;
+        }
         
         h2, h3, p {
             color: var(--text-color);
@@ -38,18 +46,19 @@
         }
 
         article {
+            p, span {
+                font-family: var(--system-fonts);
+                line-height: 1.75;
+                font-size: .9rem;
+
+                @media (min-width: 600px) {
+                    font-size: 1rem;
+                }
+            }
+            
             p {
-                font-size: .95rem;
                 margin-top: 1.25rem;
-
-                @media (min-width: 725px) {
-                    width: 80%;
-                }
-
-                s {
-                    text-decoration: none;
-                    opacity: .8;
-                }
+                opacity: .9;
             }
         }
     }
@@ -107,7 +116,7 @@
     }
 
     #about-me, #contact {
-        .hightlight, a {
+        .highlight, a {
             color: var(--color-text-main);
         }
     }

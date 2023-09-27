@@ -1,18 +1,9 @@
 :host {
   display: flex;
-  align-content: center;
-  cursor: pointer;
+  align-items: center;
 
   .theme-icon {
     width: 18px;
-    position: relative;
-
-    ::ng-deep {
-      svg {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
+    height: 18px;
   }
 }

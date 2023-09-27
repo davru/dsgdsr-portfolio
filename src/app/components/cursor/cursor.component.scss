@@ -1,0 +1,78 @@
+.cursor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 99999;
+
+    .bubble {
+        display: flex;
+        width: 15px;
+        height: 15px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-text-main);
+        color: white;
+        border-radius: 50%;
+        opacity: .9;
+        transition: width .25s ease, height .25s ease;
+
+        i-feather {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        &.link {
+            width: 55px;
+            height: 55px;
+        }
+
+        &.pulse {
+            width: 25px;
+            height: 25px;
+            animation: pulse-animation 1.5s infinite;
+        }
+    }
+}
+
+.expand {
+    animation: cursorPulse .3s forwards;
+}
+
+@keyframes cursorPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+        opacity: .5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 105, 193, 0.5);
+  }
+  30% {
+    box-shadow: 0 0 0 15px rgba(255, 105, 193, 0);
+  }
+  31% {
+    box-shadow: 0 0 0 0px rgba(255, 105, 193, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 105, 193, 0);
+  }
+}
+
+@media (max-width: 768px) {
+    .cursor {
+        display: none;
+    }
+}
