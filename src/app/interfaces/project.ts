@@ -1,7 +1,9 @@
+import { LocalizedString } from "./locale";
+
 export interface Project {
     name: string;
     slug: string;
-    description?: string;
+    description?: LocalizedString;
     url?: string;
     tags: string[];
     links?: ProjectLink[];

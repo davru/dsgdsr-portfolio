@@ -27,6 +27,6 @@ export class TranslationService {
     }
 
     public getLocale(): Locales {
-        return this.translate.currentLang as Locales;
+        return this.translate.currentLang as Locales ?? 'en';
     }
 }

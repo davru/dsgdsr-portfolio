@@ -3,6 +3,7 @@ import { Project } from '../../interfaces/project';
 import { CommonModule } from '@angular/common';
 import { IconsModule } from '../icons/icons.module';
 import { TagListComponent } from '../tag-list/tag-list.component';
+import { Locales, TranslationService } from '../../services/translation.service';
 
 @Component({
     standalone: true,
@@ -18,4 +19,9 @@ import { TagListComponent } from '../tag-list/tag-list.component';
 export class FeaturedProjectComponent {
     @Input() project: Project;
     @Input() rtl = false;
+    public locale: Locales;
+
+    constructor(translationService: TranslationService) {
+        this.locale = translationService.getLocale();
+    }
 }

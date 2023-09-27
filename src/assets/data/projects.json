@@ -3,7 +3,10 @@
         "id": 1,
         "slug": "fastchat",
         "name": "Fast-chat",
-        "description": "An easy and fast solution to avoid needing to add contacts before writing to them through WhatsApp. You are able to install the tool as an app (PWA) in your mobile devices.",
+        "description": {
+            "en": "An easy and fast solution to avoid needing to add contacts before writing to them through WhatsApp. You are able to install the tool as an app (PWA) in your mobile devices.",
+            "es": "Una solución fácil y rápida para evitar tener que agregar contactos antes de escribirles a través de WhatsApp. Puedes instalar la herramienta como una aplicación (PWA) en tus dispositivos móviles."
+        },
         "tags": [
             "React",
             "PWA",
@@ -26,7 +29,10 @@
         "id": 2,
         "slug": "spotifyrics",
         "name": "Spotifyrics",
-        "description": "It is a small desktop app developed with React and Electron, allowing you to control your Spotify client and display real-time lyrics depending on the song you are listening to without logging in.",
+        "description": {
+            "en": "It is a small desktop app developed with React and Electron, allowing you to control your Spotify client and display real-time lyrics depending on the song you are listening to without logging in.",
+            "es": "Es una pequeña aplicación de escritorio desarrollada con React y Electron, permitiéndote controlar tu cliente de Spotify y mostrar la letra en tiempo real dependiendo de la canción que estés escuchando sin necesidad de iniciar sesión."
+        },
         "tags": [
             "React",
             "Electron",
@@ -51,7 +57,10 @@
         "id": 3,
         "slug": "pykedex",
         "name": "Pykedex",
-        "description": "Cute small remake of an old project made in Python. Mimicked using React web and an integrated terminal simulating python CLI, it works as a simple Pokedex retrieving pokemon stats and sprites.",
+        "description": {
+            "en": "a",
+            "es": "a"
+        },
         "tags": [
             "React",
             "Axios",

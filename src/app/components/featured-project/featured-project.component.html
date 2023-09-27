@@ -36,7 +36,7 @@
             </h3>
 
             <div class="project__body">
-                <p class="project__description">{{ project?.description }}</p>
+                <p class="project__description">{{ project?.description[locale] }}</p>
                 <div class="project__tags">
                     <app-tag-list [tags]="project?.tags"></app-tag-list>
                 </div>

@@ -34,10 +34,15 @@ export class LocaleSwitcherComponent {
         }
     }
 
-    public onChange(locale: Locales) {
+    public onChange(locale: Locales): void {
+        if (locale === this.currentLocale) {
+            this.isOpen = false;
+            return
+        }
+
         this.currentLocale = locale;
         this.translateService.setLocale(locale);
-        this.isOpen = false;
+        window.location.reload();
     }
 
     public toggle(e: Event) {

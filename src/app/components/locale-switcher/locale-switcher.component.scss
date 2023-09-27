@@ -20,7 +20,7 @@
             left: -41px;
             display: flex;
             flex-direction: column;
-            color: white !important;
+            color: var(--text-color) !important;
             border-radius: .5em;
 
             -webkit-box-shadow: 0px -5px 13px 1px rgba(0,0,0,0.2),
@@ -42,11 +42,15 @@
                 border-bottom: .5em solid var(--bg-color);
             }
 
+            @media (max-width: 600px) {
+                left: -36px;
+            }
+
             @media (max-width: 450px) {
-                left: -75px;
+                left: -61px;
 
                 .selector-caret {
-                    left: 83.5%;
+                    left: 70px;
                 }
             }
 
@@ -59,7 +63,7 @@
                 }
 
                 &:hover {
-                    background-color: var(--bg-secondary-color);
+                    text-decoration: line-through;
                 }
             }
         }  
