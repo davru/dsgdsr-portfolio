@@ -1,11 +1,12 @@
 import { writeFile } from 'fs';
 import { config } from 'dotenv';
+const args = require('yargs').argv
 config()
 
-const targetPath = './src/environments/environment.ts';
+const targetPath = `./src/environments/environment${args.env === 'prod' ? '.prod' : ''}.ts`;
 
 const envConfigFile = `export const environment = {
-    production: false,
+    production: ${args.env === 'prod' ? 'true' : 'false'},
     aptabase_key: "${process.env.APTABASE_KEY}"
 };
 `;

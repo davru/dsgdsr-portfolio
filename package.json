@@ -6,9 +6,10 @@
     "start": "ng serve",
     "test": "ng test",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "env-config": "ts-node -O '{\"module\": \"commonjs\"}' ./env.config.ts",
+    "env-config": "ts-node -O '{\"module\": \"commonjs\"}' ./env.config.ts --env dev",
+    "env-config:prod": "ts-node -O '{\"module\": \"commonjs\"}' ./env.config.ts --env prod",
     "build:browser": "ng build",
-    "build:browser:prod": "npm run env-config && ng build --configuration production --aot",
+    "build:browser:prod": "npm run env-config:prod && ng build --configuration production --aot",
     "deploy": "env-cmd node deploy.js",
     "deploy:prod": "node deploy.js",
     "lint": "ng lint",
@@ -16,7 +17,7 @@
     "dev:ssr": "npm run env-config && ng run portfolio:serve-ssr",
     "dev:ssr:mac": "NODE_OPTIONS=--openssl-legacy-provider npm run dev:ssr",
     "serve:ssr": "node dist/portfolio/server/main.js",
-    "build:ssr": "npm run env-config && ng build --configuration production && ng run portfolio:server:production",
+    "build:ssr": "npm run env-config:prod && ng build --configuration production && ng run portfolio:server:production",
     "prerender": "ng run portfolio:prerender",
     "vercel-build": "npm run build:ssr"
   },
@@ -43,7 +44,8 @@
     "clipboard": "^2.0.11",
     "tslib": "^2.5.0",
     "zone.js": "~0.13.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.0.0",
