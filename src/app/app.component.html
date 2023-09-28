@@ -1,10 +1,8 @@
+<app-nav></app-nav>
 
-<div id="app-container" class="theme-{{themeService.getTheme()}}">
-  <app-nav></app-nav>
+<router-outlet></router-outlet>
 
-  <router-outlet></router-outlet>
-  
-  <app-cursor></app-cursor>
-  <app-social-links></app-social-links>
-  <app-back-to-top></app-back-to-top>
-</div>
+<app-cursor></app-cursor>
+<app-back-to-top></app-back-to-top>
+
+<app-social-links></app-social-links>

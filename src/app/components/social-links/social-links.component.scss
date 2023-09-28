@@ -1,8 +1,16 @@
 :host {
+  position: fixed;
+  bottom: 0;
+  left: 0em;
+
+  @media (max-width: 1000px) {
+    position: absolute;
+    width: 100vw;
+    bottom: 4.25rem;
+  }
+
   .social-links {
     width: 30px;
-    position: fixed;
-    bottom: 0; left: 0em;
     margin: 0 1.6em;
     color: var(--text-color);
 
@@ -72,7 +80,6 @@
       margin: 0;
       padding-bottom: 1em;
       width: 100%;
-      bottom: auto;
 
       .social-icons-list {
         width: 100%;

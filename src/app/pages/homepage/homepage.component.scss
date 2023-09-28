@@ -78,8 +78,11 @@
     }
 
     #contact {
-        margin: 11rem 0 7.5rem 0;
-        padding: 0 2.2em;
+        padding: 11rem 2.2em 12rem 2.2em;
+
+        @media (min-width: 600px) {
+            padding-top: 8rem;
+        }
             
         pre {
             color: white;
