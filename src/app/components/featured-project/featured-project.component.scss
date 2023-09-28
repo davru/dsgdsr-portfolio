@@ -39,8 +39,10 @@
                     margin-right: .5em;
                 }
     
-                &:hover {
-                    color: var(--project-pink);
+                @media (min-width: 600px) {
+                    &:hover {
+                        color: var(--project-pink);
+                    }
                 }
             }
             

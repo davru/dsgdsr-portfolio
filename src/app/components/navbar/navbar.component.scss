@@ -48,8 +48,10 @@
           }
         }
 
-        &:hover {
-          color: var(--color-text-main);
+        @media (min-width: 600px) {
+          &:hover {
+            color: var(--color-text-main);
+          }
         }
 
         &-number {

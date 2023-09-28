@@ -16,8 +16,10 @@
     a {
       color: var(--color-text-main);
 
-      &:hover {
-        text-decoration: underline;
+      @media (min-width: 600px) {
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

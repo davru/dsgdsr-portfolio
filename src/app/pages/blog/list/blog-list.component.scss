@@ -26,8 +26,10 @@
                     font-size: 1.35em;
                 }
 
-                .blog-list__post_title:hover {
-                    text-decoration: overline;
+                @media (min-width: 600px) {
+                    .blog-list__post_title:hover {
+                        text-decoration: overline;
+                    }
                 }
 
                 time {

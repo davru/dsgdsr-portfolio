@@ -62,8 +62,10 @@
                     color: var(--color-text-main);
                 }
 
-                &:hover {
-                    text-decoration: line-through;
+                @media (min-width: 600px) {
+                    &:hover {
+                        text-decoration: line-through;
+                    }
                 }
             }
         }  

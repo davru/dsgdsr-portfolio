@@ -1,11 +1,11 @@
 :host {
     color: var(--color-text-secondary);
 
-    &:hover {
-        cursor: pointer;
-        color: var(--text-color);
+    @media (min-width: 600px) {
+        &:hover {
+            color: var(--text-color);
+        }
     }
-
     /*svg {
         transition: opacity 0.3s ease;
         opacity: 0;
