@@ -28,7 +28,7 @@ export class RelativeTimePipe implements PipeTransform {
     }
   }
 
-  transform(value: string): string {
+  transform(value: number): string {
     return this.from(new Date(value), new Date());
   }
 }
