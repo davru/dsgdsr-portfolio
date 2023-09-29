@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:fordevice": "ng serve --host 0.0.0.0",
     "test": "ng test",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "env-config": "ts-node -O '{\"module\": \"commonjs\"}' ./env.config.ts --env dev",
@@ -14,7 +15,7 @@
     "deploy:prod": "node deploy.js",
     "lint": "ng lint",
     "gzip": "rm -rf ./dist/*-gzip && gzipper c --verbose --output-file-format [filename].[ext] ./dist/portfolio ./dist/portfolio-gzip",
-    "dev:ssr": "npm run env-config && ng run portfolio:serve-ssr",
+    "dev:ssr": "npm run env-config && ng run portfolio:serve-ssr --",
     "dev:ssr:mac": "NODE_OPTIONS=--openssl-legacy-provider npm run dev:ssr",
     "serve:ssr": "node dist/portfolio/server/main.js",
     "build:ssr": "npm run env-config:prod && ng build --configuration production && ng run portfolio:server:production",
