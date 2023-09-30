@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavComponent } from './navbar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
-describe('FeaturedProjectComponent', () => {
+describe('NavComponentt', () => {
   let fixture: ComponentFixture<NavComponent>;
   let component: NavComponent;
 
@@ -10,9 +11,9 @@ describe('FeaturedProjectComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         NavComponent,
-        RouterTestingModule
-      ],
-      declarations: [],
+        RouterTestingModule,
+        TranslateModule.forRoot()
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavComponent);

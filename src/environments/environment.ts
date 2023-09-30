@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    aptabase_key: null
+    aptabase_key: "A-EU-3764918520"
 };

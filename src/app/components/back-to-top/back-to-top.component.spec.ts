@@ -1,11 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BackToTopComponent } from './back-to-top.component';
+import { TranslateModule } from '@ngx-translate/core';
 
-describe('FeaturedProjectComponent', () => {
+describe('BackToTopComponent', () => {
   let fixture: ComponentFixture<BackToTopComponent>;
   let component: BackToTopComponent;
 
   beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BackToTopComponent);
     component = fixture.componentInstance;
 

@@ -27,6 +27,9 @@ jobs:
       - name: Install NPM Modules
         run: yarn install
 
+      - name: Run UT and coverage
+        run: yarn test:prod
+
       - name: Vercel pull
         run: yarn vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
