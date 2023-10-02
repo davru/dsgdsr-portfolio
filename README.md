@@ -1,27 +1,26 @@
 # Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+My portfolio and personal blog using Angular 16 and SSR
+
+![Screen Recording 2023-10-02 at 10 07 02 (1)](https://github.com/DSGDSR/dsgdsr-portfolio/assets/9610219/143b86ff-ff39-4aba-a39f-8b560414cda8)
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install
+```
 
-## Code scaffolding
+You can run  the portfolio in both ways locally, angular static and SSR
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+# SSR
+npm run dev:ssr
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Common angular app
+npm start
+```
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `npm run test` or `npm run test:prod` for headless and coverage alternative
