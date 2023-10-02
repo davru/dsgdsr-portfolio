@@ -1,6 +1,29 @@
 [
+    
     {
         "id": 1,
+        "slug": "shar3",
+        "name": "Shar3 (WIP)",
+        "description": {
+            "en": "Desktop app for easily sharing your folders and files temporarily with a QR code or url. Works inside and outside of your local network!",
+            "es": "Aplicación de escritorio para compartir fácilmente tus carpetas y archivos de forma temporal con un código QR o url. Funciona dentro y fuera de tu red local."
+        },
+        "tags": [
+            "React",
+            "Electron",
+            "Express"
+        ],
+        "links": [
+            {
+                "url": "https://github.com/DSGDSR/shar3-app",
+                "icon": "github"
+            }
+        ],
+        "image_name": "shar3.webp",
+        "url": "https://github.com/DSGDSR/shar3-app"
+    },
+    {
+        "id": 2,
         "slug": "fastchat",
         "name": "Fast-chat",
         "description": {
@@ -26,7 +49,7 @@
         "url": "https://fastchat.dsgdsr.me"
     },
     {
-        "id": 2,
+        "id": 3,
         "slug": "spotifyrics",
         "name": "Spotifyrics",
         "description": {
@@ -52,27 +75,5 @@
         ],
         "image_name": "spotifyrics.png",
         "url": "https://spotifyrics.dsgdsr.me/"
-    },
-    {
-        "id": 3,
-        "slug": "pykedex",
-        "name": "Pykedex",
-        "description": {
-            "en": "a",
-            "es": "a"
-        },
-        "tags": [
-            "React",
-            "Axios",
-            "PokeAPI"
-        ],
-        "links": [
-            {
-                "url": "https://pykedex.dsgdsr.me",
-                "icon": "external-link"
-            }
-        ],
-        "image_name": "pykedex.jpeg",
-        "url": "https://pykedex.dsgdsr.me"
     }
 ]
