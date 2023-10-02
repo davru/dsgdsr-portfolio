@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { ThemeModes, ThemeService } from '../../services/theme.service';
 import { ThemeSwitcherComponent } from './theme-switcher.component';
 
-describe('FeaturedProjectComponent', () => {
+describe('ThemeSwitcherComponent', () => {
   let fixture: ComponentFixture<ThemeSwitcherComponent>;
   let component: ThemeSwitcherComponent;
 

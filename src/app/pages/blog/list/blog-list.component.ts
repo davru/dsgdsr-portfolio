@@ -16,6 +16,7 @@ export class BlogListComponent implements OnInit {
     translationService: TranslationService,
   ) {
     this.locale = translationService.getLocale();
+    translationService.onLangChange().subscribe(({ lang }) => this.locale = lang as Locales)
   }
 
   ngOnInit(): void {

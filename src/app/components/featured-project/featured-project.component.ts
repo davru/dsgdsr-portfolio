@@ -23,5 +23,6 @@ export class FeaturedProjectComponent {
 
     constructor(translationService: TranslationService) {
         this.locale = translationService.getLocale();
+        translationService.onLangChange().subscribe(({ lang }) => this.locale = lang as Locales)
     }
 }

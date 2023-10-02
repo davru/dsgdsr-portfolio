@@ -5,6 +5,7 @@ import posts from '../../../../assets/data/posts.json';
 import { Meta } from '@angular/platform-browser';
 import { ClipboardButtonComponent } from '../../../components/clipboard-button/clipboard-button.component';
 import { Locales, TranslationService } from '../../../services/translation.service';
+import { PostService } from '../../../services/post.service';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -21,9 +22,15 @@ export class BlogPostComponent implements OnInit {
     constructor(
         private readonly activatedRoute: ActivatedRoute,
         private readonly meta: Meta,
-        translationService: TranslationService,
+        readonly translationService: TranslationService,
+        readonly postService: PostService,
     ) {
         this.locale = translationService.getLocale();
+        translationService.onLangChange().subscribe(({ lang }) => {
+            this.locale = lang as Locales
+            postService.getPost(this.post.slug, this.locale)
+                .subscribe((markdown) => this.markdown = markdown);
+        })
     }
 
     async ngOnInit(): Promise<void> {

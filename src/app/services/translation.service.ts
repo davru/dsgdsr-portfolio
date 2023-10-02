@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 export type Locales = 'en' | 'es';
 
@@ -28,5 +28,9 @@ export class TranslationService {
 
     public getLocale(): Locales {
         return this.translate.currentLang as Locales ?? 'en';
+    }
+
+    public onLangChange(): EventEmitter<LangChangeEvent> {
+        return this.translate.onLangChange;
     }
 }

@@ -42,10 +42,9 @@ export class LocaleSwitcherComponent {
 
         this.currentLocale = locale;
         this.translateService.setLocale(locale);
-        window.location.reload();
     }
 
-    public toggle(e: Event) {
+    public toggle() {
         this.isOpen = !this.isOpen;
     }
 }

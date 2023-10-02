@@ -6,14 +6,14 @@
                     <h3>{{ post?.title[locale] }}</h3>
                 </a>
 
-                <time>{{ post?.date | relativeTime }}</time>
+                <time>{{ post?.date | relativeTime:locale }}</time>
             </header>
 
             <main>{{ post?.summary[locale] }}</main>
 
             <footer>
                 <div class="blog-list__post_footer__more">
-                    <time>{{ post?.date | relativeTime }}</time>
+                    <time>{{ post?.date | relativeTime:locale }}</time>
                     <a [routerLink]="['/blog', post?.slug]" class="blog-list__post_footer__read-more">read more...</a>
                 </div>
             

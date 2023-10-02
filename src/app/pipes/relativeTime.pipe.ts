@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TranslationService } from '../services/translation.service';
+import { Locales, TranslationService } from '../services/translation.service';
 @Pipe({
   name: 'relativeTime',
 })
@@ -15,8 +15,7 @@ export class RelativeTimePipe implements PipeTransform {
     second: 1000
   }
 
-  private from(d1: Date, d2?: Date) {
-    const locale = this.translationService.getLocale();
+  private from(locale: Locales, d1: Date, d2?: Date) {
     const rtf = new Intl.RelativeTimeFormat(locale)
     const elapsed = d1.getTime() - (d2 || new Date()).getTime()
 
@@ -28,7 +27,7 @@ export class RelativeTimePipe implements PipeTransform {
     }
   }
 
-  transform(value: number): string {
-    return this.from(new Date(value), new Date());
+  transform(value: number, locale: Locales = this.translationService.getLocale()): string {
+    return this.from(locale, new Date(value), new Date());
   }
 }

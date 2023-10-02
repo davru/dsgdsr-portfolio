@@ -16,7 +16,7 @@
                     backgroundColor="var(--color-text-main)"
                 ></app-tag-list>
                 
-                <time>{{ post?.date | relativeTime }}</time>
+                <time>{{ post?.date | relativeTime:locale }}</time>
             </div>
         </header>
 
@@ -24,7 +24,8 @@
             emoji
             clipboard
             [clipboardButtonComponent]="clipboardButton"
-        >{{ markdown }}</markdown>
+            [data]="markdown"
+        ></markdown>
     </article>
     <ng-template #error>
         <app-error-page></app-error-page>
