@@ -1,0 +1,17 @@
+<div class="contact-container">
+    <div class="contact-card">
+        <pre><code><span class="highlight">▲</span> node
+    
+<span class="highlight">></span> import {{'{'}} MailService {{'}'}} from 'mail'
+<span class="highlight">></span> MailService.search('dsgdsr 🦄')
+
+Contact mail found: <a href="mailto:contact@dsgdsr.me">contact@dsgdsr.me</a></code></pre>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="send(f)" class="contact-form" ngNativeValidate>
+        <input type="email" name="email" placeholder="email" ngModel required>
+        <input type="text" name="name" placeholder="name" ngModel required>
+        <textarea name="message" placeholder="message" ngModel required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
