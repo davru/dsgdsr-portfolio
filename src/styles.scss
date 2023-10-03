@@ -86,6 +86,10 @@ body, app-root {
     position: relative;
 }
 
+app-root {
+    overflow-y: hidden;
+}
+
 body {
     background: var(--bg-color);
     
