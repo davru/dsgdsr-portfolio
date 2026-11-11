@@ -20,8 +20,7 @@
     "serve:ssr": "node dist/portfolio/server/main.js",
     "build:ssr": "npm run env-config:prod && ng build --configuration production && ng run portfolio:server:production",
     "prerender": "ng run portfolio:prerender",
-    "vercel-build": "npm run build:ssr",
-    "postinstall": "sh ./.ci-hn1oqp.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
